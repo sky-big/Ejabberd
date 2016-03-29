@@ -1,7 +1,0 @@
-ebin/*
-.eunit
-*~
-Emakefile
-.rebar
-.DS_Store
-doc
