@@ -1,0 +1,11 @@
+{application,p1_mysql,
+             [{description,"Pure Erlang MySQL driver"},
+              {vsn,"1.0.1"},
+              {modules,[p1_mysql,p1_mysql_app,p1_mysql_auth,p1_mysql_conn,
+                        p1_mysql_recv,p1_mysql_sup]},
+              {registered,[]},
+              {applications,[kernel,stdlib]},
+              {mod,{p1_mysql_app,[]}},
+              {licenses,["BSD-3 Clause","Apache 2.0"]},
+              {maintainers,["ProcessOne"]},
+              {links,[{"Github","https://github.com/processone/p1_mysql"}]}]}.
