@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# define default configuration
+ROOT_DIR=$(cd `dirname $0`; pwd)
+
+# define default environment variables
+ERL="$ROOT_DIR"/erl
+IEX="$ROOT_DIR"/iex
+EPMD="$ROOT_DIR"/epmd
+ERL_LIBS="$ROOT_DIR"/../lib
+WERL="$ROOT_DIR"/werl
+
+# 将scripts做为Erlang命令搜索的第一路径
+export PATH="$ROOT_DIR:$PATH"
+# 声明Erlang的lib目录路径
+export ERL_LIBS
+
+escript erl_make.erl
+

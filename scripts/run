@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# define default configuration
+ROOT_DIR=$(cd `dirname $0`; pwd)
+
+# define default environment variables
+ERL_LIBS="$ROOT_DIR"/../lib
+
+# 将scripts做为Erlang命令搜索的第一路径
+export PATH="$ROOT_DIR:$PATH"
+# 声明Erlang的lib目录路径
+export ERL_LIBS
+
+escript run_ejabberd.erl

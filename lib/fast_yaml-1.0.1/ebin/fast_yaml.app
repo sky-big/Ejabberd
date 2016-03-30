@@ -1,0 +1,12 @@
+{application,fast_yaml,
+             [{description,"Fast YAML native library for Erlang / Elixir"},
+              {vsn,"1.0.1"},
+              {modules,[fast_yaml,fast_yaml_app,fast_yaml_sup]},
+              {registered,[]},
+              {applications,[kernel,stdlib]},
+              {mod,{fast_yaml_app,[]}},
+              {files,["src/","c_src/fast_yaml.c","include/","rebar.config",
+                      "rebar.config.script","README.md","LICENSE.txt"]},
+              {licenses,["Apache 2.0"]},
+              {maintainers,["ProcessOne"]},
+              {links,[{"Github","https://github.com/processone/fast_yaml"}]}]}.
