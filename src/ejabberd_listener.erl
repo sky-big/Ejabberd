@@ -88,6 +88,7 @@ start_listeners() ->
 		undefined ->
 			ignore;
 		Ls ->
+			io:format("AAAAAAAAAAAAAAA:~p~n", [Ls]),
 			Ls2 = lists:map(
 					fun({Port, Module, Opts}) ->
 							case start_listener(Port, Module, Opts) of

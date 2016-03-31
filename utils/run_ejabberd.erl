@@ -89,16 +89,16 @@ get_ejabberd_node_start_args(Options, NodeName) ->
 	EjabberdMnesiaDbPath = proplists:get_value(ejabberd_db_path, Options) ++ "/" ++ NodeName,
 	
 	%% 获得代码beam路径
-	CodeBeamPath = " -pa " ++ proplists:get_value(beam_dir, Options) ++ " ",
+	CodeBeamPath = "-pa " ++ proplists:get_value(beam_dir, Options),
 	%% 启动后执行的模块和函数名
-	StartModuleAndFun = " -s ejabberd_application start" ++ " ",
+	StartModuleAndFun = "-s ejabberd_application start",
 	%% Mnesia配置
-	MnesiaOptionStr = " -mnesia dir \\\"" ++ EjabberdMnesiaDbPath ++ "\\\"",
+	MnesiaOptionStr = "-mnesia dir \\\"" ++ EjabberdMnesiaDbPath ++ "\\\"",
 	%% Erlang配置
-	ErlangOptionStr = " -smp enable +P " ++ integer_to_list(EjabberdErlangMaxProcess) ++ " ",
+	ErlangOptionStr = "-smp enable +P " ++ integer_to_list(EjabberdErlangMaxProcess),
 	
 	%% 组合所有的启动参数
-	lists:append([CodeBeamPath, StartModuleAndFun, MnesiaOptionStr, ErlangOptionStr]).
+	string:join([CodeBeamPath, StartModuleAndFun, MnesiaOptionStr, ErlangOptionStr], " ").
 
 
 %% RabbitMQ集群系统的停止接口
