@@ -5,3 +5,65 @@
 2016-03-31 10:33:00.209 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
 2016-03-31 10:59:13.340 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
 2016-03-31 11:26:51.848 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-04-01 11:03:58.536 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-04-01 11:05:14.852 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-04-05 11:59:21.543 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-04-05 16:29:52.155 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-04-05 16:29:53.540 [error] <0.351.0>@ejabberd_listener:socket_error:649 Failed to open socket:
+  {5222,ejabberd_c2s,[inet,{ip,{0,0,0,0}}]}
+Reason: IP address and port number already used: 0.0.0.0 5222
+2016-04-05 16:29:53.540 [error] <0.351.0> CRASH REPORT Process ejabberd_listeners with 0 neighbours exited with reason: bad return value: {eaddrinuse,{5222,{0,0,0,0},tcp}} in gen_server:init_it/6 line 334
+2016-04-05 16:29:53.540 [error] <0.317.0> Supervisor ejabberd_sup had child ejabberd_listener started with ejabberd_listener:start_link() at undefined exit with reason bad return value: {eaddrinuse,{5222,{0,0,0,0},tcp}} in context start_error
+2016-04-05 16:29:53.545 [error] <0.42.0> CRASH REPORT Process <0.42.0> with 0 neighbours exited with reason: no such process or port in call to gen_server:call(ejabberd_sup, {start_child,{ejabberd_sm,{ejabberd_sm,start_link,[]},transient,1000,worker,[ejabberd_sm]}}, infinity) in application_master:init/4 line 133
+2016-04-05 16:30:44.742 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-04-05 16:30:46.155 [error] <0.351.0>@ejabberd_listener:socket_error:649 Failed to open socket:
+  {5222,ejabberd_c2s,[inet,{ip,{0,0,0,0}}]}
+Reason: IP address and port number already used: 0.0.0.0 5222
+2016-04-05 16:30:46.155 [error] <0.351.0> CRASH REPORT Process ejabberd_listeners with 0 neighbours exited with reason: bad return value: {eaddrinuse,{5222,{0,0,0,0},tcp}} in gen_server:init_it/6 line 334
+2016-04-05 16:30:46.156 [error] <0.317.0> Supervisor ejabberd_sup had child ejabberd_listener started with ejabberd_listener:start_link() at undefined exit with reason bad return value: {eaddrinuse,{5222,{0,0,0,0},tcp}} in context start_error
+2016-04-05 16:30:46.159 [error] <0.42.0> CRASH REPORT Process <0.42.0> with 0 neighbours exited with reason: no such process or port in call to gen_server:call(ejabberd_sup, {start_child,{ejabberd_sm,{ejabberd_sm,start_link,[]},transient,1000,worker,[ejabberd_sm]}}, infinity) in application_master:init/4 line 133
+2016-04-05 16:33:12.600 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-04-05 16:34:23.440 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-04-05 16:36:00.971 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-04-06 10:33:40.931 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-04-06 11:25:42.663 [error] <0.507.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 11:26:12.629 [error] <0.509.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 11:37:12.774 [error] <0.520.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 11:42:50.998 [error] <0.527.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 11:44:59.341 [error] <0.530.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 11:48:00.833 [error] <0.535.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 11:52:46.540 [error] <0.541.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 11:53:09.264 [error] <0.543.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 11:55:04.462 [error] <0.547.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 11:55:27.673 [error] <0.549.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 11:59:02.899 [error] <0.554.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:00:16.608 [error] <0.557.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:01:50.620 [error] <0.561.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:12:25.985 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-04-06 12:17:59.904 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-04-06 12:19:36.718 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-04-06 12:19:38.215 [error] <0.37.0> CRASH REPORT Process <0.37.0> with 0 neighbours exited with reason: no function clause matching erlang:set_cookie(<0.37.0>, xxw) line 2973 in gen_server:init_it/6 line 330
+2016-04-06 12:20:30.157 [error] <0.460.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:21:08.022 [error] <0.462.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:21:18.638 [error] <0.464.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:22:19.203 [error] <0.467.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:23:14.988 [error] <0.474.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:23:50.094 [error] <0.477.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:26:59.168 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-04-06 12:27:55.625 [error] <0.458.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:29:23.979 [error] <0.461.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:31:18.649 [error] <0.473.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:31:50.083 [error] <0.475.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:32:29.938 [error] <0.477.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:33:00.596 [error] <0.481.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:33:45.488 [error] <0.483.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:35:01.600 [error] <0.486.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:37:32.044 [error] <0.493.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:38:16.212 [error] <0.495.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:39:19.590 [error] <0.499.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 15:11:15.727 [error] <0.631.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 15:11:31.854 [error] <0.633.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 15:12:18.555 [error] <0.637.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 15:14:23.023 [error] <0.667.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 15:14:30.946 [error] <0.669.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 15:18:31.919 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell

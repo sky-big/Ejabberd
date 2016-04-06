@@ -30,31 +30,31 @@
 
 %% External exports
 -export([start_link/0,
-	 add/3,
-	 add/4,
-	 add/5,
-	 add_dist/5,
-	 add_dist/6,
-	 delete/3,
-	 delete/4,
-	 delete/5,
-	 delete_dist/5,
-	 delete_dist/6,
-	 run/2,
-	 run/3,
-	 run_fold/3,
-	 run_fold/4,
-	 get_handlers/2]).
+		 add/3,
+		 add/4,
+		 add/5,
+		 add_dist/5,
+		 add_dist/6,
+		 delete/3,
+		 delete/4,
+		 delete/5,
+		 delete_dist/5,
+		 delete_dist/6,
+		 run/2,
+		 run/3,
+		 run_fold/3,
+		 run_fold/4,
+		 get_handlers/2]).
 
 -export([delete_all_hooks/0]).
 
 %% gen_server callbacks
 -export([init/1,
-	 handle_call/3,
-	 handle_cast/2,
-	 code_change/3,
-	 handle_info/2,
-	 terminate/2]).
+		 handle_call/3,
+		 handle_cast/2,
+		 code_change/3,
+		 handle_info/2,
+		 terminate/2]).
 
 -include("logger.hrl").
 
@@ -66,7 +66,7 @@
 %%% API
 %%%----------------------------------------------------------------------
 start_link() ->
-    gen_server:start_link({local, ejabberd_hooks}, ejabberd_hooks, [], []).
+	gen_server:start_link({local, ejabberd_hooks}, ejabberd_hooks, [], []).
 
 -spec add(atom(), fun(), number()) -> ok.
 

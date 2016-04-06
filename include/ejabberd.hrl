@@ -21,6 +21,7 @@
 -ifndef(EJABBERD_HRL).
 -define(EJABBERD_HRL, true).
 
+%% 获得当前Ejabberd系统的版本号的宏定义
 -define(VERSION, ejabberd_config:get_version()).
 
 -define(MYHOSTS, ejabberd_config:get_myhosts()).

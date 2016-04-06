@@ -72,7 +72,7 @@
 %% API
 %%====================================================================
 -spec start(atom(), sockmod(), socket(), [{atom(), any()}]) -> any().
-
+%% 新的Socket连接的创建后调用到此处
 start(Module, SockMod, Socket, Opts) ->
 	case Module:socket_type() of
 		xml_stream ->
@@ -83,11 +83,12 @@ start(Module, SockMod, Socket, Opts) ->
 								_ -> infinity
 							end,
 			{ReceiverMod, Receiver, RecRef} = case catch
-							   SockMod:custom_receiver(Socket)
+									   SockMod:custom_receiver(Socket)
 												  of
 												  {receiver, RecMod, RecPid} ->
 													  {RecMod, RecPid, RecMod};
 												  _ ->
+													  %% 启动接收socket上数据的进程ejabberd_receiver
 													  RecPid =
 														  ejabberd_receiver:start(Socket,
 																				  SockMod,
@@ -96,14 +97,18 @@ start(Module, SockMod, Socket, Opts) ->
 													  {ejabberd_receiver, RecPid,
 													   RecPid}
 											  end,
+			%% 组装socket_state数据结构
 			SocketData = #socket_state{sockmod = SockMod,
 									   socket = Socket, receiver = RecRef},
+			%% 调用回调模块start函数
 			case Module:start({?MODULE, SocketData}, Opts) of
 				{ok, Pid} ->
+					%% 设置让新创建的ejabberd_receiver进程来处理socket发送过来的数据
 					case SockMod:controlling_process(Socket, Receiver) of
 						ok -> ok;
 						{error, _Reason} -> SockMod:close(Socket)
 					end,
+					%% 通知ejabberd_receiver进程刚Module:start创建的进程为控制进程
 					ReceiverMod:become_controller(Receiver, Pid);
 				{error, _Reason} ->
 					SockMod:close(Socket),

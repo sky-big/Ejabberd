@@ -7,10 +7,10 @@ ERL_MAX_PORTS=32000
 ERL_PROCESSES=250000
 ERL_MAX_ETS_TABLES=1400
 FIREWALL_WINDOW=""
-ERLANG_NODE=ejabberd@xxw-PC
+# ERLANG_NODE=ejabberd@xxw-PC
 
 # define default environment variables
-ROOT_DIR="C:\Program Files\ejabberd-16.02"
+ROOT_DIR="C:\github\Ejabberd"
 ERL="$ROOT_DIR"/bin/erl
 IEX="$ROOT_DIR"/bin/iex
 EPMD="$ROOT_DIR"/bin/epmd
@@ -53,7 +53,7 @@ ARGS=$(echo "$ARGS" | sed 's/ *$//')
 : ${LOGS_DIR:="$EJABBERD_HOME"/logs}
 : ${SPOOL_DIR:="$EJABBERD_HOME"/database/mnesia}
 : ${EJABBERD_DOC_PATH:="$ROOT_DIR"/doc}
-: ${EJABBERD_DIR:="$ROOT_DIR"/lib/ejabberd-16.02}
+: ${EJABBERD_DIR:="$ROOT_DIR"}
 : ${EJABBERD_EBIN_PATH:="$EJABBERD_DIR"/ebin}
 : ${EJABBERD_PRIV_PATH:="$EJABBERD_DIR"/priv}
 : ${EJABBERD_BIN_PATH:="$EJABBERD_PRIV_PATH"/bin}
@@ -286,10 +286,11 @@ ctlexec()
 {
     CONN_NAME=$1; shift
     COMMAND=$(echo $@ | sed 's/["&$;\|<>()]/\\&/g')
-    $EXEC_CMD "'$ERL' $NAME ${CONN_NAME} \
+    $ERL $NAME ${CONN_NAME} \
+      -pa $EJABBERD_EBIN_PATH \
       -noinput -hidden $KERNEL_OPTS -s ejabberd_ctl \
       -extra $ERLANG_NODE $EJABBERD_NO_TIMEOUT \
-      $COMMAND"
+      $COMMAND
 }
 
 # stop epmd if there is no other running node

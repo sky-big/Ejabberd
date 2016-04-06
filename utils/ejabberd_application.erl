@@ -50,6 +50,8 @@ init([]) ->
 		[] ->
 			io:format("start_cluster start find run.option is empty~n");
 		Options ->
+			%% 设置当前节点的cookie
+			erlang:set_cookie(node(), proplists:get_value(cookie, Options)),
 			%% 设置单个Ejabberd节点的环境变量
 			set_env(Options),
 			%% 启动Ejabberd系统

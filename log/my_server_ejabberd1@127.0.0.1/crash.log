@@ -1,0 +1,162 @@
+2016-04-05 16:29:53 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:ejabberd_listener/1
+    pid: <0.351.0>
+    registered_name: ejabberd_listeners
+    exception exit: {{bad_return_value,{eaddrinuse,{5222,{0,0,0,0},tcp}}},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,334}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+    ancestors: [ejabberd_sup,<0.43.0>]
+    messages: []
+    links: [<0.317.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 1658
+  neighbours:
+2016-04-05 16:29:53 =SUPERVISOR REPORT====
+     Supervisor: {local,ejabberd_sup}
+     Context:    start_error
+     Reason:     {bad_return_value,{eaddrinuse,{5222,{0,0,0,0},tcp}}}
+     Offender:   [{pid,undefined},{name,ejabberd_listener},{mfargs,{ejabberd_listener,start_link,[]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2016-04-05 16:29:53 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.42.0>
+    registered_name: []
+    exception exit: {{bad_return,{{ejabberd_app,start,[normal,[]]},{'EXIT',{noproc,{gen_server,call,[ejabberd_sup,{start_child,{ejabberd_sm,{ejabberd_sm,start_link,[]},transient,1000,worker,[ejabberd_sm]}},infinity]}}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,133}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+    ancestors: [<0.41.0>]
+    messages: []
+    links: [<0.41.0>,<0.43.0>,<0.7.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 376
+    stack_size: 27
+    reductions: 116
+  neighbours:
+2016-04-05 16:30:46 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:ejabberd_listener/1
+    pid: <0.351.0>
+    registered_name: ejabberd_listeners
+    exception exit: {{bad_return_value,{eaddrinuse,{5222,{0,0,0,0},tcp}}},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,334}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+    ancestors: [ejabberd_sup,<0.43.0>]
+    messages: []
+    links: [<0.317.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 1658
+  neighbours:
+2016-04-05 16:30:46 =SUPERVISOR REPORT====
+     Supervisor: {local,ejabberd_sup}
+     Context:    start_error
+     Reason:     {bad_return_value,{eaddrinuse,{5222,{0,0,0,0},tcp}}}
+     Offender:   [{pid,undefined},{name,ejabberd_listener},{mfargs,{ejabberd_listener,start_link,[]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2016-04-05 16:30:46 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.42.0>
+    registered_name: []
+    exception exit: {{bad_return,{{ejabberd_app,start,[normal,[]]},{'EXIT',{noproc,{gen_server,call,[ejabberd_sup,{start_child,{ejabberd_sm,{ejabberd_sm,start_link,[]},transient,1000,worker,[ejabberd_sm]}},infinity]}}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,133}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+    ancestors: [<0.41.0>]
+    messages: []
+    links: [<0.41.0>,<0.43.0>,<0.7.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 376
+    stack_size: 27
+    reductions: 116
+  neighbours:
+2016-04-06 11:25:42 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 11:26:12 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 11:37:12 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 11:42:50 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 11:44:59 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 11:48:00 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 11:52:46 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 11:53:09 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 11:55:04 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 11:55:27 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 11:59:02 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:00:16 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:01:50 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:19:38 =CRASH REPORT====
+  crasher:
+    initial call: ejabberd_application:init/1
+    pid: <0.37.0>
+    registered_name: []
+    exception exit: {{function_clause,[{erlang,set_cookie,[<0.37.0>,xxw],[{file,"erlang.erl"},{line,2973}]},{ejabberd_application,init,1,[{file,"c:/github/ejabberd/utils/ejabberd_application.erl"},{line,58}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,306}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,330}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,237}]}]}
+    ancestors: [<0.2.0>]
+    messages: []
+    links: [<0.2.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 27
+    reductions: 2561
+  neighbours:
+2016-04-06 12:20:30 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:21:08 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:21:18 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:22:19 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:23:14 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:23:50 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:27:55 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:29:23 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:31:18 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:31:50 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:32:29 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:33:00 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:33:45 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:35:01 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:37:32 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:38:16 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 12:39:19 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 15:11:15 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 15:11:31 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 15:12:18 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 15:14:23 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-06 15:14:30 =ERROR REPORT====
+** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 

@@ -837,22 +837,24 @@ get_vh_by_auth_method(AuthMethod) ->
 
 %% @spec (Path::string()) -> true | false
 is_file_readable(Path) ->
-    case file:read_file_info(Path) of
-	{ok, FileInfo} ->
-	    case {FileInfo#file_info.type, FileInfo#file_info.access} of
-		{regular, read} -> true;
-		{regular, read_write} -> true;
-		_ -> false
-	    end;
-	{error, _Reason} ->
-	    false
-    end.
+	case file:read_file_info(Path) of
+		{ok, FileInfo} ->
+			case {FileInfo#file_info.type, FileInfo#file_info.access} of
+				{regular, read} -> true;
+				{regular, read_write} -> true;
+				_ -> false
+			end;
+		{error, _Reason} ->
+			false
+	end.
 
+
+%% 获取当前Ejabberd系统的版本号
 get_version() ->
-    case application:get_key(ejabberd, vsn) of
-        undefined -> "";
-        {ok, Vsn} -> list_to_binary(Vsn)
-    end.
+	case application:get_key(ejabberd, vsn) of
+		undefined -> "";
+		{ok, Vsn} -> list_to_binary(Vsn)
+	end.
 
 -spec get_myhosts() -> [binary()].
 

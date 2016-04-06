@@ -61,8 +61,18 @@
 %%-----------------------------
 %% Module
 %%-----------------------------
-
+%% 提供给ejabberd_ctl脚本调用的接口
 start() ->
+	[WorkPath | _] = code:get_path(),
+	file:set_cwd(WorkPath),
+	%% 添加的代码，设置当前ctl节点的cookie
+	case run_option:get_options("../options/run.option") of
+		[] ->
+			io:format("run_ejabberd start find run.option is empty~n");
+		Options ->
+			erlang:set_cookie(node(), proplists:get_value(cookie, Options))
+	end,
+	%% init:get_plain_arguments()获得以--arg对应的配置参数
 	[SNode, Timeout, Args] = case init:get_plain_arguments() of
 								 [SNode2, "--no-timeout" | Args2] ->
 									 [SNode2, infinity, Args2];
@@ -72,6 +82,7 @@ start() ->
 									 print_usage(),
 									 halt(?STATUS_USAGE)
 							 end,
+	%% 拿到要访问的节点名字
 	SNode1 = case string:tokens(SNode, "@") of
 				 [_Node, _Server] ->
 					 SNode;
@@ -87,6 +98,7 @@ start() ->
 					 end
 			 end,
 	Node = list_to_atom(SNode1),
+	%% call到对应的节点上去根据不同的参数返回不同的值
 	Status = case rpc:call(Node, ?MODULE, process, [Args], Timeout) of
 				 {badrpc, Reason} ->
 					 print("Failed RPC connection to the node ~p: ~p~n",
@@ -96,6 +108,7 @@ start() ->
 				 S ->
 					 S
 			 end,
+	%% 停止当前ctl节点的运行
 	halt(Status).
 
 
@@ -108,7 +121,7 @@ init() ->
 %%-----------------------------
 %% ejabberdctl Command managment
 %%-----------------------------
-
+%% 注册命令
 register_commands(CmdDescs, Module, Function) ->
 	ets:insert(ejabberd_ctl_cmds, CmdDescs),
 	ejabberd_hooks:add(ejabberd_ctl_process,
@@ -116,6 +129,7 @@ register_commands(CmdDescs, Module, Function) ->
 	ok.
 
 
+%% 取消注册命令
 unregister_commands(CmdDescs, Module, Function) ->
 	lists:foreach(fun(CmdDesc) ->
 						  ets:delete_object(ejabberd_ctl_cmds, CmdDesc)
@@ -133,6 +147,8 @@ unregister_commands(CmdDescs, Module, Function) ->
 
 %% The commands status, stop and restart are defined here to ensure
 %% they are usable even if ejabberd is completely stopped.
+%% 处理ctl脚本的访问
+%% 返回当前Ejabberd节点的状态
 process(["status"]) ->
 	{InternalStatus, ProvidedStatus} = init:get_status(),
 	print("The node ~p is ~p with status: ~p~n",
@@ -149,23 +165,28 @@ process(["status"]) ->
 			?STATUS_SUCCESS
 	end;
 
+%% 处理将当前Ejabberd节点关闭的消息
 process(["stop"]) ->
 	%%ejabberd_cover:stop(),
 	init:stop(),
 	?STATUS_SUCCESS;
 
+%% 处理将当前Ejabberd节点重新启动的消息
 process(["restart"]) ->
 	init:restart(),
 	?STATUS_SUCCESS;
 
+%% 处理获取当前mnesia数据库的详情的消息
 process(["mnesia"]) ->
 	print("~p~n", [mnesia:system_info(all)]),
 	?STATUS_SUCCESS;
 
+%% 处理获取当前Ejabberd节点mnesia数据库的详情的消息
 process(["mnesia", "info"]) ->
 	mnesia:info(),
 	?STATUS_SUCCESS;
 
+%% 处理根据Arg获取mnesia数据库信息的消息
 process(["mnesia", Arg]) ->
 	case catch mnesia:system_info(list_to_atom(Arg)) of
 		{'EXIT', Error} -> print("Error: ~p~n", [Error]);
@@ -820,6 +841,7 @@ format_usage_ctype({Name, {tuple, ElementsDef}}, Indentation) ->
 	Indentation2 = Indentation + length(NameFmt) + 4,
 	ElementsFmt = format_usage_tuple(ElementsDef, Indentation2),
 	[NameFmt, "::{ " | ElementsFmt].
+
 
 format_usage_tuple([], _Indentation) ->
 	[];

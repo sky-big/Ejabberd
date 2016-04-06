@@ -74,6 +74,7 @@ start(normal, _Args) ->
 	set_settings_from_config(),
 	%% 访问控制
 	acl:start(),
+	%% 流量控制相关
 	shaper:start(),
 	%% 建立到集群中其他节点的链接,其他节点在配置中定义
 	connect_nodes(),
@@ -168,7 +169,7 @@ db_init() ->
 	end,
 	%% 当前Ejabberd节点启动Mnesia数据库
 	ejabberd:start_app(mnesia, permanent),
-	%% 当前Ejabberd节点的Mnesia数据库等待同步集群的Mnesia数据
+	%% 当前Ejabberd节点的Mnesia数据库永久的等待同步集群的Mnesia数据
 	mnesia:wait_for_tables(mnesia:system_info(local_tables), infinity).
 
 
@@ -300,6 +301,7 @@ set_settings_from_config() ->
 
 %% 当前Ejabberd节点上启动crypto，sasl，ssl，fast_yaml，fast_tls，fast_xml，stringprep，ezlib，cache_tab这些应用
 start_apps() ->
+	%% OTP加密应用的启动
 	crypto:start(),
 	ejabberd:start_app(sasl),
 	ejabberd:start_app(ssl),

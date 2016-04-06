@@ -40,47 +40,56 @@
 %% We do not block on send anymore.
 -define(TCP_SEND_TIMEOUT, 15000).
 
+%% ejabberd_listener监督进程的启动入口函数(该监督函数是ejabberd_sup监督进程的子进程)
 start_link() ->
-    supervisor:start_link({local, ejabberd_listeners}, ?MODULE, []).
+	supervisor:start_link({local, ejabberd_listeners}, ?MODULE, []).
 
 
+%% ejabberd_listener监督进程启动的回调初始化函数
 init(_) ->
-    ets:new(listen_sockets, [named_table, public]),
-    bind_tcp_ports(),
-    {ok, {{one_for_one, 10, 1}, []}}.
+	%% 创建listen_sockets ETS表
+	ets:new(listen_sockets, [named_table, public]),
+	bind_tcp_ports(),
+	{ok, {{one_for_one, 10, 1}, []}}.
 
+
+%% 将配置参数中没有依赖的监听启动监听相关进程，会在Ejabberd节点启动的时候执行
 bind_tcp_ports() ->
-    case ejabberd_config:get_option(listen, fun validate_cfg/1) of
-	undefined ->
-	    ignore;
-	Ls ->
-	    lists:foreach(
-	      fun({Port, Module, Opts}) ->
-		      ModuleRaw = strip_frontend(Module),
-		      case ModuleRaw:socket_type() of
-			  independent -> ok;
-			  _ ->
-			      bind_tcp_port(Port, Module, Opts)
-		      end
-	      end, Ls)
-    end.
+	case ejabberd_config:get_option(listen, fun validate_cfg/1) of
+		undefined ->
+			ignore;
+		Ls ->
+			lists:foreach(
+			  fun({Port, Module, Opts}) ->
+					  ModuleRaw = strip_frontend(Module),
+					  case ModuleRaw:socket_type() of
+						  independent -> ok;
+						  _ ->
+							  bind_tcp_port(Port, Module, Opts)
+					  end
+			  end, Ls)
+	end.
 
+
+%% 将配置参数中没有依赖的监听启动监听相关进程(启动没有依赖的tcp监听)，会在Ejabberd节点启动的时候执行
 bind_tcp_port(PortIP, Module, RawOpts) ->
-    try check_listener_options(RawOpts) of
-	ok ->
-	    {Port, IPT, IPS, IPV, Proto, OptsClean} = parse_listener_portip(PortIP, RawOpts),
-	    {_Opts, SockOpts} = prepare_opts(IPT, IPV, OptsClean),
-	    case Proto of
-		udp -> ok;
-		_ ->
-		    ListenSocket = listen_tcp(PortIP, Module, SockOpts, Port, IPS),
-		    ets:insert(listen_sockets, {PortIP, ListenSocket}),
-                    ok
-	    end
-    catch
-	throw:{error, Error} ->
-	    ?ERROR_MSG(Error, [])
-    end.
+	%% 检查监听端口时的配置参数
+	try check_listener_options(RawOpts) of
+		ok ->
+			{Port, IPT, IPS, IPV, Proto, OptsClean} = parse_listener_portip(PortIP, RawOpts),
+			{_Opts, SockOpts} = prepare_opts(IPT, IPV, OptsClean),
+			case Proto of
+				udp -> ok;
+				_ ->
+					ListenSocket = listen_tcp(PortIP, Module, SockOpts, Port, IPS),
+					ets:insert(listen_sockets, {PortIP, ListenSocket}),
+					ok
+			end
+	catch
+		throw:{error, Error} ->
+			?ERROR_MSG(Error, [])
+	end.
+
 
 %% 启动配置文件中的监听器模块
 start_listeners() ->
@@ -88,7 +97,6 @@ start_listeners() ->
 		undefined ->
 			ignore;
 		Ls ->
-			io:format("AAAAAAAAAAAAAAA:~p~n", [Ls]),
 			Ls2 = lists:map(
 					fun({Port, Module, Opts}) ->
 							case start_listener(Port, Module, Opts) of
@@ -138,6 +146,7 @@ start_dependent(Port, Module, Opts) ->
 
 
 init(PortIP, Module, RawOpts) ->
+	%% 根据配置信息解析要监听的端口和IP地址
 	{Port, IPT, IPS, IPV, Proto, OptsClean} = parse_listener_portip(PortIP, RawOpts),
 	{Opts, SockOpts} = prepare_opts(IPT, IPV, OptsClean),
 	if Proto == udp ->
@@ -147,6 +156,7 @@ init(PortIP, Module, RawOpts) ->
 	end.
 
 
+%% UDP监听类型的初始化
 init_udp(PortIP, Module, Opts, SockOpts, Port, IPS) ->
 	case gen_udp:open(Port, [binary,
 							 {active, false},
@@ -174,7 +184,9 @@ init_udp(PortIP, Module, Opts, SockOpts, Port, IPS) ->
 	end.
 
 
+%% TCP监听类型的初始化
 init_tcp(PortIP, Module, Opts, SockOpts, Port, IPS) ->
+	%% 使用TCP协议监听PortIP对应的IP和端口
 	ListenSocket = listen_tcp(PortIP, Module, SockOpts, Port, IPS),
 	%% Inform my parent that this port was opened succesfully
 	proc_lib:init_ack({ok, self()}),
@@ -194,13 +206,16 @@ init_tcp(PortIP, Module, Opts, SockOpts, Port, IPS) ->
 	end.
 
 
+%% 使用TCP协议监听PortIP对应的IP和端口
 listen_tcp(PortIP, Module, SockOpts, Port, IPS) ->
 	case ets:lookup(listen_sockets, PortIP) of
 		[{PortIP, ListenSocket}] ->
 			?INFO_MSG("Reusing listening port for ~p", [PortIP]),
+			%% 如果存在这样的监听，则将ETS表里的监听信息删除掉
 			ets:delete(listen_sockets, PortIP),
 			ListenSocket;
 		_ ->
+			%% 最终TCP协议监听端口的地方
 			Res = gen_tcp:listen(Port, [binary,
 										{packet, 0},
 										{active, false},
@@ -234,6 +249,7 @@ listen_tcp(PortIP, Module, SockOpts, Port, IPS) ->
 %% but they are only used when no IP address was specified in the PortIP.
 %% The IP version (either IPv4 or IPv6) is inferred from the IP address type,
 %% so the option inet/inet6 is only used when no IP is specified at all.
+%% 根据配置信息解析要监听的端口和IP地址
 parse_listener_portip(PortIP, Opts) ->
 	{IPOpt, Opts2} = strip_ip_option(Opts),
 	{IPVOpt, OptsClean} = case proplists:get_bool(inet6, Opts2) of
@@ -312,6 +328,7 @@ get_ip_tuple(IPOpt, _IPVOpt) ->
 	IPOpt.
 
 
+%% 已经启动对对对应端口的启动，此函数是等待端口发送来建立连接的信息，即等待Socket的连接
 accept(ListenSocket, Module, Opts) ->
 	IntervalOpt =
 		case proplists:get_value(accept_interval, Opts) of
@@ -346,12 +363,15 @@ accept(ListenSocket, Module, Opts) ->
 	accept(ListenSocket, Module, Opts, Interval).
 
 
+%% 已经启动对对对应端口的启动，此函数是等待端口发送来建立连接的信息，即等待Socket的连接
 accept(ListenSocket, Module, Opts, Interval) ->
 	NewInterval = check_rate_limit(Interval),
+	%% 等待Socket连接的建立
 	case gen_tcp:accept(ListenSocket) of
 		{ok, Socket} ->
 			case {inet:sockname(Socket), inet:peername(Socket)} of
 				{{ok, {Addr, Port}}, {ok, {PAddr, PPort}}} ->
+					%% 新的Socket连接创建后进行日志打印
 					?INFO_MSG("(~w) Accepted connection ~s:~p -> ~s:~p",
 							  [Socket, ejabberd_config:may_hide_data(inet_parse:ntoa(PAddr)), PPort,
 							   inet_parse:ntoa(Addr), Port]);
@@ -603,6 +623,7 @@ get_proto(Opts) ->
 	end.
 
 
+%% 规范监听端口使用协议类型
 normalize_proto(tcp) -> tcp;
 
 normalize_proto(udp) -> udp;
@@ -614,6 +635,7 @@ normalize_proto(UnknownProto) ->
 	tcp.
 
 
+%% 监听报错的函数
 socket_error(Reason, PortIP, Module, SockOpts, Port, IPS) ->
 	ReasonT = case Reason of
 				  eaddrnotavail ->

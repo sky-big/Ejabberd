@@ -108,9 +108,6 @@ stop(Args) ->
 		[] ->
 			io:format("start_cluster start find run.option is empty~n");
 		Options ->
-			%% 统一节点的cookie
-			Cookie = proplists:get_value(cookie, Options),
-			erlang:set_cookie(node(), Cookie),
 			Prefix = run_option:get_prefix(Options),
 			Nodes = run_option:get_nodes(Options),
 			lists:foreach(fun({SNode, Ip, _, _, _, _}) ->

@@ -23,6 +23,7 @@
 %%%
 %%%----------------------------------------------------------------------
 
+%% 流量控制相关
 -module(shaper).
 
 -behaviour(ejabberd_config).
@@ -48,7 +49,7 @@
 -export_type([shaper/0]).
 
 -spec start() -> ok.
-
+%% 流量控制模块的启动函数
 start() ->
 	%% 创建内存表shaper
     mnesia:create_table(shaper,
@@ -94,22 +95,24 @@ get_max_rate(Name) ->
 -spec new(atom()) -> shaper().
 
 new(none) ->
-    none;
+	none;
+
 new(Name) ->
-    MaxRate = case ets:lookup(shaper, {Name, global}) of
-                  [#shaper{maxrate = R}] ->
-                      R;
-                  [] ->
-                      none
-              end,
-    new1(MaxRate).
+	MaxRate = case ets:lookup(shaper, {Name, global}) of
+				  [#shaper{maxrate = R}] ->
+					  R;
+				  [] ->
+					  none
+			  end,
+	new1(MaxRate).
 
 -spec new1(none | integer()) -> shaper().
 
 new1(none) -> none;
+
 new1(MaxRate) ->
-    #maxrate{maxrate = MaxRate, lastrate = 0.0,
-	     lasttime = p1_time_compat:system_time(micro_seconds)}.
+	#maxrate{maxrate = MaxRate, lastrate = 0.0,
+			 lasttime = p1_time_compat:system_time(micro_seconds)}.
 
 -spec update(shaper(), integer()) -> {shaper(), integer()}.
 

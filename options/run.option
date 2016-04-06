@@ -25,5 +25,7 @@
 	%% Ejabberd节点上最大的ETS表数量
 	{ejabberd_max_ets, 1400},
 	%% Ejabberd系统Mnesia数据存储目录
-	{ejabberd_db_path, "../db"}
+	{ejabberd_db_path, "../db"},
+	%% cookie
+	{cookie, 'xxw'}
 ].

@@ -9,5 +9,3 @@ cd /d %MAKEFILE_FILE_CMD%
 bash run
 
 echo Start Ejabberd Sucess ......
-
-pause
