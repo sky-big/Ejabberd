@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<brand>
+
+<!-- Used in various locations throughout the interface.
+     Translate to another script by adding the xml:lang attribute. -->
+<softwarename>Pandion</softwarename>
+<softwarename xml:lang="ar">بانديون</softwarename>
+<softwarename xml:lang="bg">Пандион</softwarename>
+<softwarename xml:lang="hi">पैन्डीऑन</softwarename>
+<softwarename xml:lang="ja">パンディオン</softwarename>
+<softwarename xml:lang="ru">Пандион</softwarename>
+<softwarename xml:lang="ur">پندین</softwarename> 
+<softwarename xml:lang="vn">Pan-di-on</softwarename>
+<softwarename xml:lang="zh">潘迪安</softwarename>
+
+<!-- Used as name of files and directories.
+     Must not contain / \ : * ? " < > |
+	 Should not be transliterated. -->
+<softwarenamesafe>Pandion</softwarenamesafe>
+
+<!-- Major and minor version (x.y) of the application.
+     Build number is appended automatically from built.txt. -->
+<softwareversion>2.6</softwareversion>
+
+<!-- Type of updates to auto-install (stable/beta/development)
+     The track is determined automatically from the update feed. -->
+<softwaretrack>stable</softwaretrack>
+
+<!-- Shown in the About dialog -->
+<copyrightholder>Contributors</copyrightholder>
+<copyrightyear>2001-2010</copyrightyear>
+<softwareurl>http://pandion.im/</softwareurl>
+<licensename>GNU General Public License 3 or later</licensename>
+<licenseurl>http://www.gnu.org/licenses/gpl-3.0.html</licenseurl>
+<termsandcontitionsurl>http://pandion.im/about</termsandcontitionsurl>
+<trademarkholder>Sebastiaan Deckers</trademarkholder>
+
+<!-- Connect to this XMPP server and use SSPI (Kerberos/NTLM) to authenticate without user interaction -->
+<sspiserver></sspiserver>
+
+<!-- Only connect to this server and only create accounts on this server.
+     Overrides anything entered by a user. -->
+<fixedserver></fixedserver>
+
+<!-- Shown in the Help menu -->
+<helpcontact>http://pandion.im/about</helpcontact>
+<helpforum>http://getsatisfaction.com/pandion</helpforum>
+<helpmanual>http://pandion.pbworks.com/</helpmanual>
+
+<!-- URI of extras -->
+<pluginlist>http://plugins.pandion.im/</pluginlist>
+<emoticonlist>http://emoticons.pandion.im/</emoticonlist>
+<backgroundlist>http://backgrounds.pandion.im/</backgroundlist>
+
+<!-- URI of software version checker (Atom 1.0 + Appcaster) -->
+<autoupdate>http://feeds.feedburner.com/pandionupdates</autoupdate>
+<installupdates>yes</installupdates> <!-- yes/no -->
+
+<!-- Shown in the Welcome screen -->
+<welcomescreen>yes</welcomescreen>
+<welcomefeedurl>http://feeds.feedburner.com/pandiongetsatisfaction</welcomefeedurl>
+<welcomesearchurl>http://getsatisfaction.com/pandion/searches?query=${query}&amp;commit=Search</welcomesearchurl>
+<twittername>pandion</twittername>
+<facebookpage>pandion.im</facebookpage>
+<getsatisfactioncompany>pandion</getsatisfactioncompany>
+
+<!-- Browser integration -->
+<browserhomepage>http://search.pandion.im/</browserhomepage> <!-- CR, FF, IE, OP -->
+<browsersearchboxicon>http://www.google.com/favicon.ico</browsersearchboxicon> <!-- FF search box, overridden by OSD -->
+<browsersearchboxkeyword>http://search.pandion.im/#q=</browsersearchboxkeyword> <!-- FF address bar -->
+<browsersearchboxname>Pandion Search</browsersearchboxname> <!-- Shown in the Welcome screen -->
+<browsersearchboxosdname>Google Powered Pandion Search</browsersearchboxosdname> <!-- IE/FF search box, should match the OSD -->
+<browsersearchboxosd>http://search.pandion.im/osd.xml</browsersearchboxosd> <!-- FF, IE7/8 -->
+<browsersearchboxreplace>Google</browsersearchboxreplace> <!-- FF -->
+<browsersearchboxsearchpage>http://search.pandion.im/#q=%s</browsersearchboxsearchpage> <!-- IE6 -->
+<browsersearchboxxpi>{536ad1d6-d9d9-41e5-8945-864506a1f2fc}</browsersearchboxxpi> <!-- FF extension ID {guid} or name@email -->
+
+<!-- URI of a web page to replace the Sign Up dialog -->
+<websignup></websignup>
+
+<!-- URI of a web page to replace the Change my Password dialog -->
+<passwordpage></passwordpage>
+
+<!-- Connection settings dialog -->
+<serveraddress></serveraddress>
+<serverport></serverport>
+<encryption>optional</encryption> <!-- optional/tls/ssl/none -->
+<authentication>normal</authentication> <!-- normal/ntlm -->
+
+</brand>

@@ -165,17 +165,17 @@ run(Hook, Host, Args) ->
 %% If a call returns 'stop', no more calls are performed and 'stopped' is returned.
 %% If a call returns {stop, NewVal}, no more calls are performed and NewVal is returned.
 run_fold(Hook, Val, Args) ->
-    run_fold(Hook, global, Val, Args).
+	run_fold(Hook, global, Val, Args).
 
 -spec run_fold(atom(), binary() | global, any(), list()) -> any().
 
 run_fold(Hook, Host, Val, Args) ->
-    case ets:lookup(hooks, {Hook, Host}) of
-	[{_, Ls}] ->
-	    run_fold1(Ls, Hook, Val, Args);
-	[] ->
-	    Val
-    end.
+	case ets:lookup(hooks, {Hook, Host}) of
+		[{_, Ls}] ->
+			run_fold1(Ls, Hook, Val, Args);
+		[] ->
+			Val
+	end.
 
 %%%----------------------------------------------------------------------
 %%% Callback functions from gen_server

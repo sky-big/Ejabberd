@@ -10,17 +10,17 @@ FIREWALL_WINDOW=""
 # ERLANG_NODE=ejabberd@xxw-PC
 
 # define default environment variables
-ROOT_DIR="C:\github\Ejabberd"
-ERL="$ROOT_DIR"/bin/erl
-IEX="$ROOT_DIR"/bin/iex
-EPMD="$ROOT_DIR"/bin/epmd
+ROOT_DIR=$(cd `dirname $0`; pwd)
+ERL="$ROOT_DIR"/erl
+IEX="$ROOT_DIR"/iex
+EPMD="$ROOT_DIR"/epmd
 INSTALLUSER="xxw"
-ERL_LIBS="$ROOT_DIR"/lib
-WERL="$ROOT_DIR"/bin/werl
-HOME="$(echo $APPDATA | "$ROOT_DIR"/bin/sed 's*\\*/*g')"
+ERL_LIBS="$ROOT_DIR"/../lib
+WERL="$ROOT_DIR"/werl
+HOME="$(echo $APPDATA | "$ROOT_DIR"/sed 's*\\*/*g')"
 EJABBERD_HOME="$HOME"/ejabberd
 
-export PATH="$ROOT_DIR/bin:$PATH"
+export PATH="$ROOT_DIR:$PATH"
 EXEC_CMD="bash -c"
 
 # parse command line parameters
@@ -52,8 +52,8 @@ ARGS=$(echo "$ARGS" | sed 's/ *$//')
 : ${ERLANG_NODE:=$ERLANG_NODE_ARG}
 : ${LOGS_DIR:="$EJABBERD_HOME"/logs}
 : ${SPOOL_DIR:="$EJABBERD_HOME"/database/mnesia}
-: ${EJABBERD_DOC_PATH:="$ROOT_DIR"/doc}
-: ${EJABBERD_DIR:="$ROOT_DIR"}
+: ${EJABBERD_DOC_PATH:="$ROOT_DIR"/../doc}
+: ${EJABBERD_DIR:="$ROOT_DIR/.."}
 : ${EJABBERD_EBIN_PATH:="$EJABBERD_DIR"/ebin}
 : ${EJABBERD_PRIV_PATH:="$EJABBERD_DIR"/priv}
 : ${EJABBERD_BIN_PATH:="$EJABBERD_PRIV_PATH"/bin}

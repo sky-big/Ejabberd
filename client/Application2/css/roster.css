@@ -1,0 +1,99 @@
+/* Contact List
+ */
+.roster-group-header {
+	margin-top: 4px;
+	margin-bottom: 4px;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	color: #57a6d3;
+	border-bottom: 1px solid #d3d5d6;
+}
+.roster-group-toggle-expand, .roster-group-toggle-compact {
+	float: right;
+	cursor: hand;
+	height: 14px;
+	width: 16px;
+	background: transparent url(../images/misc/expand.gif) no-repeat center left;
+}
+.roster-group-toggle-compact {
+	background: transparent url(../images/misc/compact.gif) no-repeat center left;
+}
+.roster-group-empty {
+	display: block;
+	font-style: italic;
+	padding-bottom: 5px;
+	font-family: Arial;
+	font-size: 10px;
+	color: #b3b5b6;
+}
+.roster-item-offline {
+	display: block;
+	margin: 0 0 0 29px;
+}
+.roster-item-offline-name-blocked {
+	font-style: italic;
+	font-family: "Segoe UI", Tahoma;
+	font-size: 11px;
+	color: #b3b5b6;
+}
+.roster-item-offline-name {
+	font-family: "Segoe UI", Tahoma;
+	font-size: 11px;
+	color: #333536;
+}
+.roster-item-offline-msg {
+	font-family: Arial;
+	font-size: 10px;
+	color: #b3b5b6;
+}
+.roster-resource {
+	display: block;
+}
+.roster-resource-avatar {
+	margin: 0 5px 0 0;
+	border-width: 0;
+}
+.roster-resource-name-blocked {
+	font-style: italic;
+	font-family: "Segoe UI", Tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #b3b5b6;
+}
+.roster-resource-name {
+	font-family: "Segoe UI", Tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #333536;
+}
+.roster-resource-msg {
+	font-family: Arial;
+	font-size: 10px;
+	color: #b3b5b6;
+}
+.roster-resource-link {
+	text-decoration: none;
+	color: #6699cc;
+}
+.roster-resource-busy {
+	font-family: "Segoe UI", Tahoma;
+	font-size: 10px;
+	color: #f84a21;
+}
+.roster-resource-away {
+	font-family: "Segoe UI", Tahoma;
+	font-size: 10px;
+	color: #427fd1;
+}
+
+/* RTL */
+html.rtl .roster-item-offline {
+	margin: 0 29px 0 0;
+}
+html.rtl .roster-resource-avatar {
+	margin: 0 0 0 5px;
+}
+html.rtl .roster-group-toggle-expand, html.rtl .roster-group-toggle-compact {
+	float: left;
+}

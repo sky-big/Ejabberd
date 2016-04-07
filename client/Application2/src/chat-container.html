@@ -1,0 +1,200 @@
+﻿<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META HTTP-EQUIV="MSThemeCompatible" CONTENT="Yes">
+<LINK rel="stylesheet" type="text/css" href="../css/chat-container.css"></LINK>
+<SCRIPT src="main/XMPPAddress.js"></SCRIPT>
+<SCRIPT src="main/XMPPHookIQ.js"></SCRIPT>
+<SCRIPT src="main/XMPPMessage.js"></SCRIPT>
+<SCRIPT src="main/XHTML-IM.js"></SCRIPT>
+<SCRIPT src="main/dial_font.js"></SCRIPT>
+<SCRIPT src="main/ContainerCode.js"></SCRIPT>
+<SCRIPT src="main/md5_obj.js"></SCRIPT>
+<SCRIPT src="../js/chat-container.js"></SCRIPT>
+</HEAD>
+
+<BODY scroll=no onload="Begin()" onunload="End()" onkeydown="Keyboard( event )">
+
+<TABLE cellspacing=0 cellpadding=0 style="table-layout: fixed; width: 100%; height: 100%; border-width: 0;">
+	<TR>
+
+		<!-- Chat -->
+		<TD id=chat-area>
+			<DIV id=content-edge-top>
+			<DIV id=content-edge-left>
+			<DIV id=content-edge-right>
+			<DIV id=content-edge-bottom>
+			<TABLE cellspacing=0 cellpadding=0 style="table-layout: fixed; width: 100%; height: 100%; border-width: 0;">
+
+				<COLGROUP>
+					<COL width="*"/>
+					<COL width=79/>
+				</COLGROUP>
+
+				<!-- Mode Indicator -->
+				<TR id=mode-indicator valign=top>
+					<TD id=mode-bar colspan=2
+						onclick="MouseMenu()"
+						onmouseover="document.getElementById( 'mode-name' ).style.color = '#312505'; document.getElementById( 'mode-message' ).style.color = '#312505'; document.getElementById( 'mode-address' ).style.color = '#312505';"
+						onmouseout="document.getElementById( 'mode-name' ).style.color = ''; document.getElementById( 'mode-message' ).style.color = ''; document.getElementById( 'mode-address' ).style.color = '';"
+					>
+						<DIV id=mode-frame-left>
+						<DIV id=mode-frame-right>
+							<IMG
+								id=mode-avatar
+								onmousedown="AvatarZoom()"
+								onclick="if ( gContainer.Trackers( gContainer.ActiveTrackerAddress ).Avatar.length == 40 ) event.cancelBubble = true;"
+								onmouseover="if ( ! gResizeInterval && gContainer.ActiveTrackerAddress.length && gContainer.Trackers( gContainer.ActiveTrackerAddress ).Avatar.length == 40 ) { this.style.borderColor = '#0570ad'; event.cancelBubble = true; }"
+								onmouseout="this.style.borderColor = 'transparent';"
+							/>
+							<NOBR id=mode-top>
+								<SPAN id=mode-name></SPAN>
+								<SPAN id=mode-address></SPAN>
+							</NOBR>
+							<NOBR id=mode-message></NOBR>
+						</DIV>
+						</DIV>
+					</TD>
+				</TR>
+				<!-- / Mode Indicator -->
+
+				<!-- User is Typing -->
+				<TR id=user-typing-area valign=top>
+					<TD colspan=2>
+						<DIV class=inside-edge-left>
+						<DIV class=inside-edge-right>
+							<DIV id=user-typing-bar>
+								<DIV id=user-typing-icon></DIV>
+								<NOBR id=user-typing></NOBR>
+							</DIV>
+						</DIV>
+						</DIV>
+					</TD>
+				</TR>
+				<!-- / User is Typing -->
+
+				<!-- Conversation -->
+				<TR id=conversation valign=top height="100%">
+					<TD colspan=2>
+						<DIV class=inside-edge-left>
+						<DIV class=inside-edge-right>
+							<DIV id=tab-area></DIV>
+						</DIV>
+						</DIV>
+					</TD>
+				</TR>
+				<!-- / Conversation -->
+
+				<!-- Toolbar -->
+				<TR id=toolbar valign=top>
+					<TD colspan=2>
+						<DIV class=inside-edge-left>
+						<DIV class=inside-edge-right>
+						<NOBR id=toolbar-wrapper>
+							<SPAN id=resize-grip onmousedown="ResizeStartTracking()"></SPAN>
+							<BUTTON
+								oncontextmenu="return false"
+								class=toolbar-button
+								id=btn-emoticons
+								onmouseover="ToolbarButtonMouseOver( this )"
+								onmouseout="ToolbarButtonMouseOut( this )"
+								onclick="ChooseEmoticons()"
+							>
+								<SPAN id=txt-emoticons></SPAN>
+							</BUTTON>
+							<BUTTON
+								oncontextmenu="return false"
+								class=toolbar-button
+								id=btn-font
+								onmouseover="ToolbarButtonMouseOver( this )"
+								onmouseout="ToolbarButtonMouseOut( this )"
+								onclick="dial_font()"
+							>
+								<SPAN id=txt-font></SPAN>
+							</BUTTON>
+							<BUTTON
+								oncontextmenu="return false"
+								class=toolbar-button
+								id=btn-background
+								onmouseover="ToolbarButtonMouseOver( this )"
+								onmouseout="ToolbarButtonMouseOut( this )"
+								onclick="ChooseBackground()"
+							>
+								<SPAN id=txt-background></SPAN>
+							</BUTTON>
+						</NOBR>
+						</DIV>
+						</DIV>
+					</TD>
+				</TR>
+				<!-- / Toolbar -->
+
+				<!-- Input -->
+				<TR id=input-bar valign=top>
+					<TD colspan=1>
+						<DIV class=inside-edge-left>
+						<TEXTAREA
+							id=send-text
+							onkeydown="setTimeout( DisableButton, 0 ); return OnTypeInput( this )"
+						></TEXTAREA>
+						</DIV>
+					</TD>
+					<TD align=right valign=middle>
+						<DIV class=inside-edge-right>
+						<INPUT
+							id=btn-send
+							type=submit
+							oncontextmenu="return false"
+							onclick="SendMessage()"
+							disabled
+						/>
+						</DIV>
+					</TD>
+				</TR>
+				<!-- / Input -->
+
+				<!-- New Tab -->
+				<TR id=new-tab style="display: none;">
+					<TD colspan=2>
+						<DIV class=inside-edge-left style="padding-left: 0;">
+						<DIV class=inside-edge-right style="padding-right: 0;">
+						<DIV class=new-tab-top>
+						<DIV class=new-tab-left>
+						<DIV class=new-tab-right>
+							<H1 id=txt-new-tab-title>Start a new conversation</H1>
+							<FORM onsubmit="TabAddStart(); return false;">
+								<INPUT type=text id=new-tab-address value="bob@example.com" />
+								<INPUT type=submit value="&raquo;" />
+							</FORM>
+						</DIV>
+						</DIV>
+						</DIV>
+						</DIV>
+						</DIV>
+					</TD>
+				</TR>
+				<!-- / New Tab -->
+
+			</TABLE>
+			</DIV>
+			</DIV>
+			</DIV>
+			</DIV>
+		</TD>
+		<!-- / Chat -->
+
+	</TR>
+
+	<!-- Tab Buttons -->
+	<TR id=tab-bar-row>
+		<TD>
+			<SPAN id=tab-bar></SPAN>
+			<SPAN id=tab-add-button class=tab-add-button onclick="TabAddActivate()"></SPAN>
+		</TD>
+	</TR>
+	<!-- / Tab Buttons -->
+
+</TABLE>
+
+</BODY>
+</HTML>

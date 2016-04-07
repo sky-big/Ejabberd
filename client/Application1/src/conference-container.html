@@ -1,0 +1,180 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META HTTP-EQUIV="MSThemeCompatible" CONTENT="Yes">
+<LINK rel="stylesheet" type="text/css" href="../css/main.css"></LINK>
+<LINK rel="stylesheet" type="text/css" href="../css/roster.css"></LINK>
+<LINK rel="stylesheet" type="text/css" href="../css/chat-container.css"></LINK>
+<SCRIPT src="main/XMPPAddress.js"></SCRIPT>
+<SCRIPT src="main/XMPPHookIQ.js"></SCRIPT>
+<SCRIPT src="main/XMPPMessage.js"></SCRIPT>
+<SCRIPT src="main/XHTML-IM.js"></SCRIPT>
+<SCRIPT src="main/dial_font.js"></SCRIPT>
+<SCRIPT src="main/ContainerCode.js"></SCRIPT>
+<SCRIPT src="../js/conference-container.js"></SCRIPT>
+</HEAD>
+
+<BODY scroll=no onload="Begin()" onunload="End()" onkeydown="Keyboard( event )">
+
+<TABLE cellspacing=0 cellpadding=0 style="table-layout: fixed; width: 100%; height: 100%; border-width: 0;">
+	<TR>
+
+		<!-- Chat -->
+		<TD id=chat-area>
+			<DIV id=content-edge-top>
+			<DIV id=content-edge-left>
+			<DIV id=content-edge-right>
+			<DIV id=content-edge-bottom>
+			<TABLE cellspacing=0 cellpadding=0 style="table-layout: fixed; width: 100%; height: 100%; border-width: 0;">
+
+				<COLGROUP>
+					<COL width="*"/>
+					<COL width=130/>
+					<COL width=79/>
+				</COLGROUP>
+
+				<!-- Mode Indicator -->
+				<TR id=mode-indicator valign=top>
+					<TD id=mode-bar colspan=3
+						onclick="MouseMenu()"
+						onmouseover="document.getElementById( 'mode-name' ).style.color = '#312505'; document.getElementById( 'mode-message' ).style.color = '#312505'; document.getElementById( 'mode-address' ).style.color = '#312505';"
+						onmouseout="document.getElementById( 'mode-name' ).style.color = ''; document.getElementById( 'mode-message' ).style.color = ''; document.getElementById( 'mode-address' ).style.color = '';"
+					>
+						<DIV id=mode-frame-left>
+						<DIV id=mode-frame-right>
+							<IMG
+								id=mode-avatar
+								align=left
+								src="../images/conference/contacts-large.png"
+							/>
+							<NOBR id=mode-top>
+								<SPAN id=mode-name></SPAN>
+								<SPAN id=mode-address></SPAN>
+							</NOBR>
+							<NOBR id=mode-message></NOBR>
+						</DIV>
+						</DIV>
+					</TD>
+				</TR>
+				<!-- / Mode Indicator -->
+
+				<TR id=conversation valign=top height="100%">
+
+					<!-- Conversation -->
+					<TD colspan=1>
+						<DIV class=inside-edge-left>
+						<DIV class=inside-edge-right>
+							<DIV id=tab-area></DIV>
+						</DIV>
+						</DIV>
+					</TD>
+					<!-- / Conversation -->
+
+					<!-- Occupants -->
+					<TD colspan=2>
+						<DIV id=occupants-panel oncontextmenu="OccupantsContextMenu()">
+							<TABLE width="100%" cellspacing=0 cellpadding=0 border=0 style="table-layout: fixed">
+								<TR valign=top>
+									<TD id=occupants-area oncontextmenu="event.cancelBubble = true;">
+										<DIV id=txt-moderators class=roster-group-header style="display: none;"></DIV>
+										<DIV id=txt-participants class=roster-group-header style="display: none;"></DIV>
+										<DIV id=txt-visitors class=roster-group-header style="display: none;"></DIV>
+									</TD>
+								</TR>
+							</TABLE>
+						</DIV>
+					</TD>
+					<!-- / Occupants -->
+
+				</TR>
+
+				<!-- Toolbar -->
+				<TR id=toolbar valign=top>
+					<TD colspan=3>
+						<DIV class=inside-edge-left>
+						<DIV class=inside-edge-right>
+						<NOBR id=toolbar-wrapper>
+							<SPAN id=resize-grip onmousedown="ResizeStartTracking()"></SPAN>
+							<BUTTON
+								oncontextmenu="return false"
+								class=toolbar-button
+								id=btn-emoticons
+								onmouseover="ToolbarButtonMouseOver( this )"
+								onmouseout="ToolbarButtonMouseOut( this )"
+								onclick="ChooseEmoticons()"
+							>
+								<SPAN id=txt-emoticons></SPAN>
+							</BUTTON>
+							<BUTTON
+								oncontextmenu="return false"
+								class=toolbar-button
+								id=btn-font
+								onmouseover="ToolbarButtonMouseOver( this )"
+								onmouseout="ToolbarButtonMouseOut( this )"
+								onclick="dial_font()"
+							>
+								<SPAN id=txt-font></SPAN>
+							</BUTTON>
+							<BUTTON
+								oncontextmenu="return false"
+								class=toolbar-button
+								id=btn-background
+								onmouseover="ToolbarButtonMouseOver( this )"
+								onmouseout="ToolbarButtonMouseOut( this )"
+								onclick="ChooseBackground()"
+							>
+								<SPAN id=txt-background></SPAN>
+							</BUTTON>
+						</NOBR>
+						</DIV>
+						</DIV>
+					</TD>
+				</TR>
+				<!-- / Toolbar -->
+
+				<!-- Input -->
+				<TR id=input-bar valign=top>
+					<TD colspan=2>
+						<DIV class=inside-edge-left>
+						<TEXTAREA
+							id=send-text
+							onkeydown="setTimeout( DisableButton, 0 ); return OnTypeInput( this )"
+						></TEXTAREA>
+						</DIV>
+					</TD>
+					<TD align=right valign=middle colspan=1>
+						<DIV class=inside-edge-right>
+						<INPUT
+							id=btn-send
+							type=submit
+							oncontextmenu="return false"
+							onclick="SendMessage()"
+							disabled
+						/>
+						</DIV>
+					</TD>
+				</TR>
+				<!-- / Input -->
+
+			</TABLE>
+			</DIV>
+			</DIV>
+			</DIV>
+			</DIV>
+		</TD>
+		<!-- / Chat -->
+
+	</TR>
+
+	<!-- Tab Buttons -->
+	<TR id=tab-bar-row>
+		<TD>
+			<SPAN id=tab-bar></SPAN>
+		</TD>
+	</TR>
+	<!-- / Tab Buttons -->
+
+</TABLE>
+
+</BODY>
+</HTML>

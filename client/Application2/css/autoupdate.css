@@ -1,0 +1,230 @@
+﻿/*
+	This file is part of Pandion instant messenger
+	Copyright (c) 2009 Sebastiaan Deckers
+	License: GNU General Public License version 3 or later
+*/
+/* Shared */
+html, body, form.panel {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+body, td, button, input {
+	cursor: default;
+	font-family: "Segoe UI", Tahoma;
+	font-size: 12px;
+}
+a {
+	color: highlight;
+}
+a:hover {
+	color: red;
+}
+
+/* Common switches to toggle elements from JavaScript */
+.visible {
+	display: block;
+}
+.hidden {
+	display: none;
+}
+
+/* Shared across all panels
+ */
+.panel {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: buttonface;
+}
+.header {
+	background-color: window;
+	height: 60px;
+	border-bottom: 2px groove window;
+}
+.header h1 {
+	font-weight: bold;
+	padding-top: 10px;
+	margin: 0 10px 0 15px;
+}
+.header h2 {
+	font-weight: normal;
+	margin: 4px 10px 0 25px;
+}
+.footer {
+	border-top: 2px groove window;
+	position: absolute;
+	bottom: 0;
+	height: 35px;
+	background-color: buttonface;
+	width: 100%;
+	padding-top: 10px;
+}
+.panel-content {
+	padding: 12px 0 0 16px;
+}
+.btn {
+	margin: 0 10px 10px 0;
+	float: right;
+	width: 90px;
+	height: 24px;
+}
+.wide {
+	width: 130px;
+}
+#tracks-version, #progress-version {
+	margin: 7px 0 0 10px;
+	color: inactivecaptiontext;
+}
+#tracks-version-track, #progress-version-track {
+	text-transform: lowercase;
+}
+
+/* Panel: Tracks
+ */
+#available-preloader {
+	background: transparent url(../images/misc/waiting.gif) no-repeat center center;
+	height: 220px;
+	width: 100%;
+}
+#txt-no-feed, #txt-unavailable {
+	margin: 40px 40px 0 40px;
+	padding: 100px 0 0 0;
+	text-align: center;
+}
+#txt-no-feed {
+	background: transparent url(../images/autoupdate/face-sad.png) no-repeat top center;
+}
+#txt-unavailable {
+	background: transparent url(../images/autoupdate/face-smile.png) no-repeat top center;
+}
+#available-list {
+	padding: 0 15px;
+}
+#available-list h3 {
+	margin: 15px 0 4px 0;
+	font-weight: normal;
+}
+.update-button {
+	cursor: default;
+	padding: 6px;
+	text-align: left;
+	width: 415px;
+	display: block;
+	margin-bottom: 5px;
+	=background-color: buttonface; /* replace pixelated rounded buttons in ie6/ie7 with classic flat button */
+}
+.update-button h4 {
+	display: inline-block;
+	font-size: 1.2em;
+	margin: 0 0 6px 0;
+	padding: 0;
+}
+.update-button .name, .update-button .number {
+	=margin-right: 4px; /* ie6/ie7 */
+}
+.update-button .name:after, .update-button .number:after {
+	content: " "; /* w3c */
+}
+.update-button .track {
+	text-transform: lowercase;
+}
+.update-button div {
+	float: right;
+	color: highlight;
+	font-style: italic;
+	display: inline;
+	font-weight: bold;
+}
+.update-button p {
+}
+
+/* Panel: Progress
+ */
+#more-information {
+	margin: 20px;
+}
+#txt-whats-new {
+	display: inline-block;
+	margin-bottom: 4px;
+}
+#txt-continue, #txt-restart, #txt-browser {
+	left: 20px;
+	margin: 0 20px 0 0;
+	position: absolute;
+	bottom: 75px;
+}
+.progress-bar-total, .progress-bar-completed, .progress-bar-counter {
+	height: 20px;
+}
+.progress-bar-total, .progress-bar-completed {
+	background: #d4d4d4 url(../images/autoupdate/progress-overlay.png) no-repeat top left;
+	_background-image: none; /* ie6 only */
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../images/autoupdate/progress-overlay.png", sizingMethod="crop"); /* ie6 only */
+}
+.progress-bar-total {
+	border: 1px solid #999;
+	position: relative;
+}
+.progress-bar-completed {
+}
+.progress-bar-counter {
+	left: 0;
+	_display: none; /* box model bug in ie6 */
+    color: #000;
+    padding-top: 5px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+}
+#progress-total {
+	left: 10%;
+	margin-top: 40px;
+	width: 80%;
+}
+#progress-completed {
+	background-color: #2acc0f;
+	width: 0%;
+}
+#progress-counter {
+}
+
+/* RTL */
+html.rtl .header h1 {
+	margin: 0 15px 0 10px;
+}
+html.rtl .header h2 {
+	margin: 4px 25px 0 10px;
+}
+html.rtl .panel-content {
+	padding: 12px 16px 0 0;
+}
+html.rtl .btn {
+	margin: 0 0 10px 10px;
+	float: left;
+}
+html.rtl #tracks-version, html.rtl #progress-version {
+	margin: 7px 10px 0 0;
+}
+html.rtl .update-button {
+	text-align: right;
+}
+html.rtl .update-button .name, html.rtl .update-button .number {
+	=margin-left: 4px; /* ie6/ie7 */
+}
+html.rtl .update-button div {
+	float: left;
+}
+html.rtl #txt-continue, html.rtl #txt-restart, html.rtl #txt-browser {
+	right: 20px;
+	margin: 0 0 0 20px;
+}
+html.rtl .progress-bar-counter {
+	right: 0;
+}
+html.rtl #progress-total {
+	right: 10%;
+}

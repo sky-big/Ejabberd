@@ -1,0 +1,338 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META HTTP-EQUIV="MSThemeCompatible" CONTENT="Yes">
+<LINK rel="stylesheet" type="text/css" href="../css/main.css"></LINK>
+<LINK rel="stylesheet" type="text/css" href="../css/roster.css"></LINK>
+
+<script type="text/javascript" src="../js/lib/json2.js"></script>
+<script type="text/javascript" src="../js/lib/client.js"></script>
+<script type="text/javascript" src="../js/lib/client/events/manager.js"></script>
+<script type="text/javascript" src="../js/lib/client/os/browser.js"></script>
+<script type="text/javascript" src="../js/lib/client/os/registry.js"></script>
+<script type="text/javascript" src="../js/lib/client/utils/countdown.js"></script>
+<script type="text/javascript" src="../js/lib/client/ui/idle/manager.js"></script>
+<script type="text/javascript" src="../js/lib/client/ui/idle/sensor/mouseMovement.js"></script>
+<script type="text/javascript" src="../js/lib/client/ui/idle/sensor/screenSaver.js"></script>
+<script type="text/javascript" src="../js/lib/client/ui/idle/sensor/workstationLock.js"></script>
+<script type="text/javascript" src="main/idle.js"></script>
+
+<SCRIPT src="main/warn.js"></SCRIPT>
+<SCRIPT src="main/file2hash.js"></SCRIPT>
+<SCRIPT src="main/hash2file.js"></SCRIPT>
+<SCRIPT src="main/init.js"></SCRIPT>
+<SCRIPT src="main/login.js"></SCRIPT>
+<SCRIPT src="main/outnit.js"></SCRIPT>
+<SCRIPT src="main/handle_keyboard.js"></SCRIPT>
+<SCRIPT src="main/OnWindowActivate.js"></SCRIPT>
+<SCRIPT src="main/mousemenu.js"></SCRIPT>
+<SCRIPT src="main/sound_play.js"></SCRIPT>
+<SCRIPT src="main/login_check.js"></SCRIPT>
+<SCRIPT src="main/md5_obj.js"></SCRIPT>
+<SCRIPT src="main/mode_new.js"></SCRIPT>
+<SCRIPT src="main/vcard.js"></SCRIPT>
+<SCRIPT src="main/pass_code.js"></SCRIPT>
+<SCRIPT src="main/history_add.js"></SCRIPT>
+<SCRIPT src="main/SettingsSave.js"></SCRIPT>
+<SCRIPT src="main/LoadProfile.js"></SCRIPT>
+<SCRIPT src="main/SaveCommonProfile.js"></SCRIPT>
+<SCRIPT src="main/Reconnect.js"></SCRIPT>
+
+<SCRIPT src="main/CommandLine.js"></SCRIPT>
+<SCRIPT src="main/HTTPEngine.js"></SCRIPT>
+<SCRIPT src="main/MenuBar.js"></SCRIPT>
+<SCRIPT src="main/OnLogin.js"></SCRIPT>
+<SCRIPT src="main/Translator.js"></SCRIPT>
+<SCRIPT src="main/Tray.js"></SCRIPT>
+
+<SCRIPT src="main/XMPPIQ.js"></SCRIPT>
+<SCRIPT src="main/XMPPMessage.js"></SCRIPT>
+<SCRIPT src="main/XMPPPresence.js"></SCRIPT>
+<SCRIPT src="main/XMPPHookIQ.js"></SCRIPT>
+<SCRIPT src="main/XMPPAddress.js"></SCRIPT>
+<SCRIPT src="main/BackgroundBrowse.js"></SCRIPT>
+<SCRIPT src="main/ClientBrowse.js"></SCRIPT>
+<SCRIPT src="main/ClientPlugin.js"></SCRIPT>
+<SCRIPT src="main/ClientRoster.js"></SCRIPT>
+<SCRIPT src="main/ClientRosterSearch.js"></SCRIPT>
+<SCRIPT src="main/ChatSession.js"></SCRIPT>
+<SCRIPT src="main/ConferenceSession.js"></SCRIPT>
+<SCRIPT src="main/Emoticon.js"></SCRIPT>
+<SCRIPT src="main/Headline.js"></SCRIPT>
+
+<SCRIPT src="main/dial_about.js"></SCRIPT>
+<SCRIPT src="main/dial_adduser.js"></SCRIPT>
+<SCRIPT src="main/dial_avatar_pick.js"></SCRIPT>
+<SCRIPT src="main/dial_autoupdate.js"></SCRIPT>
+<SCRIPT src="main/dial_background_download.js"></SCRIPT>
+<SCRIPT src="main/dial_background_list.js"></SCRIPT>
+<SCRIPT src="main/dial_block.js"></SCRIPT>
+<SCRIPT src="main/dial_bookmarks_add.js"></SCRIPT>
+<SCRIPT src="main/dial_bookmarks_manage.js"></SCRIPT>
+<SCRIPT src="main/dial_chat.js"></SCRIPT>
+<SCRIPT src="main/dial_conference.js"></SCRIPT>
+<SCRIPT src="main/dial_conference_browse.js"></SCRIPT>
+<SCRIPT src="main/dial_conference_create.js"></SCRIPT>
+<SCRIPT src="main/dial_conference_invite.js"></SCRIPT>
+<SCRIPT src="main/dial_connection_settings.js"></SCRIPT>
+<SCRIPT src="main/dial_console.js"></SCRIPT>
+<SCRIPT src="main/dial_contacts_export.js"></SCRIPT>
+<SCRIPT src="main/dial_contacts_import.js"></SCRIPT>
+<SCRIPT src="main/dial_emoticon_download.js"></SCRIPT>
+<SCRIPT src="main/dial_emoticon_list.js"></SCRIPT>
+<SCRIPT src="main/dial_emoticon_viewer.js"></SCRIPT>
+<SCRIPT src="main/dial_extension_download.js"></SCRIPT>
+<SCRIPT src="main/dial_headlines.js"></SCRIPT>
+<SCRIPT src="main/dial_history.js"></SCRIPT>
+<SCRIPT src="main/dial_file.js"></SCRIPT>
+<SCRIPT src="main/dial_group_create.js"></SCRIPT>
+<SCRIPT src="main/dial_groupmessage.js"></SCRIPT>
+<SCRIPT src="main/dial_login.js"></SCRIPT>
+<SCRIPT src="main/dial_logout.js"></SCRIPT>
+<SCRIPT src="main/dial_mode.js"></SCRIPT>
+<SCRIPT src="main/dial_password_change.js"></SCRIPT>
+<SCRIPT src="main/dial_plugin_list.js"></SCRIPT>
+<SCRIPT src="main/dial_plugins.js"></SCRIPT>
+<SCRIPT src="main/dial_preferences.js"></SCRIPT>
+<SCRIPT src="main/dial_service_register.js"></SCRIPT>
+<SCRIPT src="main/dial_signup.js"></SCRIPT>
+<SCRIPT src="main/dial_status_message.js"></SCRIPT>
+<SCRIPT src="main/dial_transport_list.js"></SCRIPT>
+<SCRIPT src="main/dial_url.js"></SCRIPT>
+<SCRIPT src="main/dial_userinfo.js"></SCRIPT>
+<SCRIPT src="main/dial_vcard_edit.js"></SCRIPT>
+<SCRIPT src="main/dial_webbrowser.js"></SCRIPT>
+<SCRIPT src="main/dial_welcome.js"></SCRIPT>
+
+<SCRIPT src="main/XMPPOnConnected.js"></SCRIPT>
+<SCRIPT src="main/XMPPOnDisconnected.js"></SCRIPT>
+<SCRIPT src="main/XMPPOnDocumentStart.js"></SCRIPT>
+<SCRIPT src="main/XMPPOnDocumentEnd.js"></SCRIPT>
+<SCRIPT src="main/XMPPOnIQ.js"></SCRIPT>
+<SCRIPT src="main/XMPPOnMessage.js"></SCRIPT>
+<SCRIPT src="main/XMPPOnPresence.js"></SCRIPT>
+<SCRIPT src="main/XMPPOnStartTLSFailed.js"></SCRIPT>
+<SCRIPT src="main/XMPPOnStartTLSSucceeded.js"></SCRIPT>
+<SCRIPT src="main/XMPPOnStartSCFailed.js"></SCRIPT>
+<SCRIPT src="main/XMPPOnStartSCSucceeded.js"></SCRIPT>
+<SCRIPT src="main/XMPPOnStream.js"></SCRIPT>
+
+</HEAD>
+
+<BODY id=body onload="init()" scroll=no>
+
+<TABLE id=content-dialog cellspacing=0 cellpadding=0 style="table-layout: fixed; width: 100%; height: 100%; border-width: 0;">
+	<TR>
+
+		<!-- Roster -->
+		<TD style="height: 100%;">
+			<DIV class=content-edge-top>
+			<DIV class=content-edge-left>
+			<DIV class=content-edge-right>
+			<DIV class=content-edge-bottom>
+			<TABLE cellspacing=0 cellpadding=0 border=0 height="100%" width="100%" style="table-layout: fixed;">
+
+				<!-- Mode Indicator -->
+				<TR valign=top height=42>
+					<TD id=mode-bar
+						onclick="dial_mode()"
+						onmouseover="document.getElementById( 'mode-name' ).style.color = '#312505'; document.getElementById( 'mode-message' ).style.color = '#040E14';"
+						onmouseout="document.getElementById( 'mode-name' ).style.color = ''; document.getElementById( 'mode-message' ).style.color = '';"
+					>
+						<DIV class=mode-frame-left>
+						<DIV class=mode-frame-right>
+							<IMG
+								id=mode-avatar
+								onmouseover="this.style.borderColor = '#0570ad';"
+								onmouseout="this.style.borderColor = 'transparent';"
+								onclick="dial_avatar_pick(); event.cancelBubble = true;"
+							/>
+							<NOBR id=mode-top>
+								<SPAN id=mode-name></SPAN>
+								<IMG id=mode-secure width=16 height=16 src="../images/misc/lock-closed.png" align=top>
+							</NOBR>
+							<NOBR id=mode-message></NOBR>
+						</DIV>
+						</DIV>
+					</TD>
+				</TR>
+				<!-- / Mode Indicator -->
+
+				<!-- Find As You Type -->
+				<TR valign=top height=34 id=find-area>
+					<TD>
+						<DIV id=find-frame>
+							<DIV id=find-wrapper>
+								<TABLE width="100%" cellspacing=0 cellpadding=0 border=0>
+									<TR>
+										<TD>
+											<INPUT id=find-query type=text tabindex=0>
+										</TD>
+										<TD width=20>
+											<A id=find-close href="#"></A>
+										</TD>
+									</TR>
+								</TABLE>
+							</DIV>
+						</DIV>
+					</TD>
+				</TR>
+				<!-- / Find As You Type -->
+
+				<!-- Contact List -->
+				<TR valign=top height="100%">
+					<TD id=tab-area>
+						<DIV class=inside-edge-left>
+						<DIV class=inside-edge-right>
+						<DIV id=content-area>
+
+							<!-- Connecting -->
+							<DIV id=connecting style="display: none; height: 100%;">
+								<TABLE width="100%" height="100%" cellspacing=0 cellpadding=0 border=0>
+									<TR>
+										<TD align=center>
+											<IMG src="../images/misc/waiting.gif" height=32 width=32>
+										</TD>
+									</TR>
+								</TABLE>
+							</DIV>
+							<!-- / Connecting -->
+
+							<!-- Disconnected -->
+							<DIV id=commerror style="display: none; height: 100%;">
+								<TABLE width="100%" height="100%" cellspacing=0 cellpadding=0 border=0>
+									<TR>
+										<TD align=center>
+											<B id=txt_disconnected></B>
+											<HR width=170>
+											<BR>
+											<A href="" onclick="Reconnect(); return false;" id=txt_reconnect></A>
+											<BR>
+											<BR>
+											<SPAN id=txt_discor></SPAN>
+											<BR>
+											<BR>
+											<A href="" onclick="dial_connection_settings(); return false;" id=txt_connection_settings></A>
+										</TD>
+									</TR>
+								</TABLE>
+							</DIV>
+							<!-- / Disconnected -->
+
+							<!-- Welcome -->
+							<DIV id=welcomemsg style="display: none; height: 100%;">
+								<TABLE width="100%" height="100%" cellspacing=0 cellpadding=0 border=0>
+									<TR>
+										<TD align=center>
+											<B id=txt_welcome></B>
+											<HR width=128>
+											<BR>
+											<A href="" onclick="dial_adduser(); return false;" id=txt_addtolist></A>
+											<BR>
+											<BR>
+											<SPAN id=txt_welcor></SPAN>
+											<BR>
+											<BR>
+											<A href="" onclick="dial_transport_list(); return false;" id=txt_config_transport></A>
+										</TD>
+									</TR>
+								</TABLE>
+							</DIV>
+							<!-- / Welcome -->
+
+							<!-- Contacts -->
+							<DIV id=rosterfield style="display: none;" oncontextmenu="ClientRosterContextMenu()">
+								<TABLE width="100%" height="100%" cellspacing=0 cellpadding=0 border=0 style="table-layout: fixed">
+									<TR valign=top>
+										<TD id=rostercell></TD>
+									</TR>
+								</TABLE>
+							</DIV>
+							<!-- / Contacts -->
+
+						</DIV>
+
+						<!-- Plug-in Tabs -->
+						<DIV id=plugin-tab-area>
+						</DIV>
+						<!-- / Plug-in Tabs -->
+
+						</DIV>
+						</DIV>
+					</TD>
+				</TR>
+				<!-- / Contact List -->
+
+			</TABLE>
+			</DIV>
+			</DIV>
+			</DIV>
+			</DIV>
+		</TD>
+		<!-- / Roster -->
+
+	</TR>
+
+	<!-- Tab Buttons -->
+	<TR id=tab-bar-row>
+		<TD id=tab-bar></TD>
+	</TR>
+	<!-- / Tab Buttons -->
+
+</TABLE>
+
+<!-- Sign In -->
+<TABLE id=signin-dialog cellspacing=0 cellpadding=0>
+	<TR>
+		<TD id=signin-area valign=top>
+			<DIV class=content-edge-top>
+			<DIV class=content-edge-left>
+			<DIV class=content-edge-right>
+			<DIV class=content-edge-bottom>
+			<DIV class=signin-frame-top>
+			<DIV class=signin-frame-left>
+			<DIV class=signin-frame-right>
+			<H1 id=signin-welcome></H1>
+			<H2 id=signin-instructions></H2>
+			<FORM onsubmit="dial_login_connect(); return false;">
+				<LABEL for=signin-address id=txt-signin-address></LABEL>
+				<INPUT id=signin-address type=text />
+				<SELECT id=signin-recently-used tabindex="-1" onchange="dial_login_changeAddressList()"></SELECT>
+				<DIV id=signin-examples>
+					<DT id=txt-signin-examples></DT>
+					<DD id=signin-example-user>bob@mycompany.com<BR />bender@gmail.com</DD>
+					<DD id=signin-example-sso>example.net<BR />mycompany.com</DD>
+				</DIV>
+
+				<LABEL for=signin-password id=txt-signin-password></LABEL>
+				<INPUT id=signin-password type=password />
+
+				<INPUT id=signin-remember type=checkbox />
+				<LABEL for=signin-remember id=txt-signin-remember></LABEL>
+				<BR />
+				<INPUT id=signin-autoconnect type=checkbox />
+				<LABEL for=signin-autoconnect id=txt-signin-autoconnect></LABEL>
+
+				<BUTTON type=submit id=signin-connect></BUTTON>
+			</FORM>
+			<UL>
+				<LI><A href="" id=signin-register onclick="dial_signup(); return false;"></A></LI>
+				<LI><A href="" id=signin-settings onclick="dial_connection_settings(); return false;"></A></LI>
+			</UL>
+			</DIV>
+			</DIV>
+			</DIV>
+			</DIV>
+			</DIV>
+			</DIV>
+			</DIV>
+		</TD>
+	</TR>
+</TABLE>
+<!-- / Sign in -->
+
+</BODY>
+</HTML>
+
+</BODY>
+</HTML>

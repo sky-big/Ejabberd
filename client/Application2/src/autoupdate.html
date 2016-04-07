@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<!--
+	This file is part of Pandion instant messenger
+	Copyright (c) 2009 Sebastiaan Deckers
+	License: GNU General Public License version 3 or later
+-->
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="MSThemeCompatible" content="Yes" />
+<link rel="stylesheet" type="text/css" href="../css/lib/meyerweb-reset.css" />
+<link rel="stylesheet" type="text/css" href="../css/autoupdate.css"></link>
+<script type="text/javascript" src="main/XMPPAddress.js"></script>
+<script type="text/javascript" src="main/XMPPMessage.js"></script>
+<script type="text/javascript" src="main/XHTML-IM.js"></script>
+<script type="text/javascript" src="../js/lib/client.js"></script>
+<script type="text/javascript" src="../js/lib/client/css.js"></script>
+<script type="text/javascript" src="../js/lib/client/data/iso8601.js"></script>
+<script type="text/javascript" src="../js/lib/client/io/ajax.js"></script>
+<script type="text/javascript" src="../js/lib/client/os/launchInBrowser.js"></script>
+<script type="text/javascript" src="../js/lib/client/os/registry.js"></script>
+<script type="text/javascript" src="../js/lib/client/html/anchorToBrowser.js"></script>
+<script type="text/javascript" src="../js/autoupdate.js"></script>
+</head>
+<body>
+
+<form id="available-updates" class="panel">
+	<div class="header">
+		<h1 id="txt-available-updates"></h1>
+		<h2 id="txt-tracks-info"></h2>
+	</div>
+	<div id="available-preloader"></div>
+	<div id="txt-unavailable"></div>
+	<div id="txt-no-feed"></div>
+	<div id="available-list">
+		<h3 id="txt-latest"></h3>
+		<div id="tracks-current"></div>
+		<h3 id="txt-alternatives"></h3>
+		<div id="tracks-alternative"></div>
+	</div>
+	<div class="footer">
+		<input type="submit" class="btn" id="btn-close" />
+		<div id="tracks-version">
+			<span id="tracks-version-number"></span>
+			<span id="tracks-version-track"></span>
+		</div>
+	</div>
+</form>
+
+<form id="download-progress" class="panel">
+	<div class="header">
+		<h1 id="txt-version"></h1>
+		<h2 id="txt-new-version"></h2>
+	</div>
+	<div id="more-information">
+		<a href="#" id="txt-whats-new"></a>
+		<p id="txt-learn-more"></p>
+	</div>
+	<div class="progress-bar-total" id="progress-total">
+		<div class="progress-bar-completed" id="progress-completed">
+			<div class="progress-bar-counter" id="progress-counter">0%</div>
+		</div>
+	</div>
+	<div id="txt-continue"></div>
+	<div id="txt-restart"></div>
+	<div id="txt-browser"></div>
+	<div class="footer">
+		<input type="submit" class="btn" id="btn-later" />
+		<input type="button" class="btn wide" id="btn-download" />
+		<input type="button" class="btn wide" id="btn-update" />
+		<div id="progress-version">
+			<span id="progress-version-number"></span>
+			<span id="progress-version-track"></span>
+		</div>
+	</div>
+</form>
+
+</body>
+</html>

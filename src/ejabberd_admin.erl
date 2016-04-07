@@ -376,6 +376,7 @@ update_module(ModuleNameString) ->
 %%%
 
 register(User, Host, Password) ->
+	io:format("DDDDDDDDDDDDDDDD:~p~n", [{User, Host, Password}]),
     case ejabberd_auth:try_register(User, Host, Password) of
 	{atomic, ok} ->
 	    {ok, io_lib:format("User ~s@~s successfully registered", [User, Host])};

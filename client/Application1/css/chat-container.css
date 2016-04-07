@@ -1,0 +1,418 @@
+/* Reset
+ */
+body {
+	cursor: default;
+	margin: 0px;
+	padding: 0px;
+	background-color: window;
+	color: windowtext;
+	height: 100%;
+}
+textarea, input, button {
+	font-family: "Segoe UI", Tahoma;
+	font-size: 11px;
+}
+
+/* Content edge
+ */
+#content-edge-top {
+	padding-bottom: 6px;
+	padding-top: 6px;
+	width: 100%;
+	height: 100%;
+	background: url(../images/edge/top.png) no-repeat center top;
+}
+#content-edge-left {
+	padding-left: 6px;
+	width: 100%;
+	height: 100%;
+	background: url(../images/edge/left.png) no-repeat left top;
+}
+#content-edge-right {
+	padding-right: 5px;
+	width: 100%;
+	height: 100%;
+	background: url(../images/edge/right.png) no-repeat right top;
+}
+#content-edge-bottom {
+	padding-bottom: 1px;
+	width: 100%;
+	height: 100%;
+	background: url(../images/edge/bottom.png) repeat-x left bottom;
+}
+.inside-edge-left {
+	padding-left: 1px;
+	width: 100%;
+	height: 100%;
+	background: url(../images/edge/inside-left.png) repeat-y left top;
+}
+.inside-edge-right {
+	padding-right: 1px;
+	width: 100%;
+	height: 100%;
+	background: url(../images/edge/inside-right.png) repeat-y right top;
+}
+
+/* Bar with status, name, avatar, etc.
+ */
+#mode-bar {
+	height: 42px;
+	cursor: hand;
+	display: block;
+	background: url(../images/main/mode-behind.png) repeat-x left top;
+}
+#mode-frame-left {
+	padding-left: 4px;
+	width: 100%;
+	height: 100%;
+	background: url(../images/main/mode-frame-left.png) no-repeat left top;
+}
+#mode-frame-right {
+	padding-right: 4px;
+	width: 100%;
+	height: 100%;
+	background: url(../images/main/mode-frame-right.png) no-repeat right top;
+}
+#mode-avatar {
+	float: left;
+	margin: 5px 3px 0 1px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	border: 2px solid transparent;
+	height: 32px;
+	width: 32px;
+}
+#mode-top {
+	width: 100%;
+	margin-top: 6px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-family: "Segoe UI", Tahoma;
+	font-size: 11px;
+	color: #4f575c;
+}
+#mode-name {
+	float: left;
+	font-family: "Segoe UI", Tahoma;
+	font-size: 14px;
+	font-weight: bold;
+	color: #1a7ab0;
+}
+#mode-message {
+	height: 16px;
+	width: 100%;
+	padding: 0 0 0 2px;
+	font-family: "Segoe UI", Tahoma;
+	font-size: 11px;
+	color: #1a7ab0;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+#mode-address {
+	margin: 4px 0 0 6px;
+	float: left;
+	font-family: "Segoe UI", Tahoma;
+	font-size: 11px;
+	color: #1a7ab0;
+}
+.mode-message-link {
+	font-family: "Segoe UI", Tahoma;
+	font-size: 11px;
+	text-decoration: none;
+	color: #6699cc;
+}
+.mode-message-link:hover {
+	font-family: "Segoe UI", Tahoma;
+	font-size: 11px;
+	text-decoration: none;
+	color: red;
+}
+
+/* Chat state notification
+ */
+#user-typing-area {
+	height: 29px;
+	background-color: #ffffff;
+}
+#user-typing-bar {
+	display: block;
+	height: 26px;
+	margin: 3px 3px 0 3px;
+	padding: 3px;
+	border: 1px #94d4ff solid;
+	background-color: infobackground;
+	font-family: "Segoe UI", Tahoma;
+	font-size: 11px;
+	color: #478ec5;
+}
+#user-typing {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 2px 0 0 4px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+#user-typing-icon {
+	float: left;
+	width: 16px;
+	height: 16px;
+	background-image: url(../images/chat-container/keyboard.png);
+	background-repeat: no-repeat;
+}
+
+/* Messages
+ */
+#chat-area {
+    height: 100%;
+}
+
+/* Message composition
+ */
+#input-bar {
+	background-color: #ffffff;
+	height: 60px;
+}
+#btn-send {
+	margin: 4px 2px 0 0;
+	height: 52px;
+	width: 100%;
+}
+#send-text {
+	padding: 0 0 0 2px;
+	overflow: auto;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	border-width: 0;
+}
+
+/* Conversation tabs
+ */
+#tab-area {
+	background: url(../images/main/content-behind.png) repeat-x left top;
+}
+#tab-bar-row {
+	background-image: url(../images/chat-container/tabs-behind.png);
+	background-repeat: repeat;
+}
+#tab-bar-row td {
+	font-size: 1px;
+	padding: 0 0 0 6px;
+}
+#tab-bar {
+	font-family: "Segoe UI", Tahoma;
+	font-size: 11px;
+}
+.tab-bar-button {
+	background-image: url(../images/chat-container/tab-button-faded.png);
+	_background-image: none; /* ie6 only */
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../images/chat-container/tab-button-faded.png", sizingMethod="crop"); /* ie6 only */
+	background-repeat: no-repeat;
+	float: left;
+	height: 28px;
+	width: 127px;
+}
+.tab-bar-button-active {
+	background-image: url(../images/chat-container/tab-button.png);
+	background-repeat: no-repeat;
+	float: left;
+	height: 28px;
+	width: 127px;
+}
+.tab-bar-text {
+	color: #4f575c;
+	float: left;
+	margin: 6px 0 0 4px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 103px;
+}
+.tab-bar-text-active {
+	color: #0e6cc3;
+	float: left;
+	font-weight: bold;
+	margin: 6px 0 0 4px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 81px;
+}
+.tab-avatar {
+	float: left;
+	margin: 4px 0 0 4px;
+	height: 16px;
+	width: 16px;
+}
+.tab-close {
+	float: right;
+	margin: 4px 4px 0 0;
+	height: 17px;
+	width: 18px;
+}
+#tab-add-button {
+	display: none;
+	float: left;
+	vertical-align: top;
+	height: 28px;
+	width: 36px;
+}
+.tab-add-button {
+	background: transparent url(../images/chat-container/tab-add-button-faded.png) no-repeat top left;
+	_background-image: none; /* ie6 only */
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../images/chat-container/tab-add-button-faded.png", sizingMethod="crop"); /* ie6 only */
+}
+.tab-add-button-active {
+	background: transparent url(../images/chat-container/tab-add-button.png) no-repeat top left;
+}
+
+/* New tab screen
+ */
+#new-tab {
+	background: url(../images/chat-container/content-behind.png) repeat-x left top;
+}
+.new-tab-top {
+	background: url(../images/chat-container/frame-top.png) repeat-x left top;
+	height: 100%;
+	width: 100%;
+}
+.new-tab-left {
+	background: url(../images/chat-container/frame-left.png) no-repeat left top;
+	padding: 0 0 0 4px;
+	height: 100%;
+	width: 100%;
+}
+.new-tab-right {
+	background: url(../images/chat-container/frame-right.png) no-repeat right top;
+	padding: 0 4px 0 0;
+	height: 100%;
+	width: 100%;
+}
+
+/* Toolbar buttons
+ */
+#toolbar {
+	height: 30px;
+	background-repeat: repeat-x;
+	background-image: url(../images/chat-container/toolbar-behind.png);
+}
+#toolbar-wrapper {
+	height: 30px;
+	width: 100%;
+}
+.toolbar-button, .toolbar-button-over {
+	cursor: default;
+	height: 30px;
+	text-align: left;
+	font-size: 11px;
+	width: auto;
+	padding: 0 15px 0 3px;
+	overflow: visible;
+}
+.toolbar-button {
+	color: #4f575c;
+	background-color: transparent;
+	border-width: 0;
+	margin: 0 3px;
+}
+.toolbar-button-over {
+	color: buttontext;
+}
+.toolbar-button span, .toolbar-button-over span {
+	margin: 0 0 0 3px;
+	padding: 5px 0 0 28px;
+	background: no-repeat left center;
+	height: 24px;
+}
+#btn-emoticons span {
+	background-image: url(../images/chat-container/emoticon.png);
+}
+#btn-font span {
+	background-image: url(../images/chat-container/font.png);
+}
+#btn-background span {
+	background-image: url(../images/chat-container/theme.png);
+}
+#resize-grip {
+	position: absolute;
+	overflow: hidden;
+	cursor: n-resize;
+	margin: 28px 0 0 0;
+	height: 5px;
+	width: 100%;
+}
+
+/* Conference room members
+ */
+#occupants-panel {
+	padding: 0 0 0 6px;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	border-left: 1px #bec0ce solid;
+}
+
+/* RTL */
+html.rtl #mode-avatar {
+	float: right;
+	margin: 5px 1px 0 3px;
+}
+html.rtl #mode-message {
+	padding: 0 2px 0 0;
+}
+html.rtl #mode-name {
+	float: right;
+}
+html.rtl #mode-address {
+	margin: 4px 6px 0 0;
+	float: right;
+}
+html.rtl #user-typing {
+	padding: 2px 4px 0 0;
+}
+html.rtl #user-typing-icon {
+	float: right;
+}
+html.rtl #btn-send {
+	margin: 4px 0 0 2px;
+}
+html.rtl #send-text {
+	padding: 0 2px 0 0;
+}
+html.rtl #input-bar .inside-edge-left {
+	background: url(../images/edge/inside-right.png) repeat-y right top;
+}
+html.rtl #input-bar .inside-edge-right {
+	background: url(../images/edge/inside-left.png) repeat-y left top;
+}
+html.rtl #tab-bar-row td {
+	padding: 0 6px 0 0;
+}
+html.rtl .tab-bar-button, html.rtl .tab-bar-button-active {
+	float: right;
+}
+html.rtl .tab-bar-text, html.rtl .tab-bar-text-active {
+	float: right;
+	margin: 6px 4px 0 0;
+}
+html.rtl .tab-avatar {
+	float: right;
+	margin: 4px 4px 0 0;
+}
+html.rtl .tab-close {
+	float: left;
+	margin: 4px 0 0 4px;
+}
+html.rtl #tab-add-button {
+	float: right;
+}
+html.rtl .toolbar-button, html.rtl .toolbar-button-over {
+	padding: 0 3px 0 15px;
+}
+html.rtl .toolbar-button span, html.rtl .toolbar-button-over span {
+	margin: 0 3px 0 0;
+	padding: 5px 28px 0 0;
+	background: no-repeat right center;
+}
+html.rtl #occupants-panel {
+	padding: 0 6px 0 0;
+}

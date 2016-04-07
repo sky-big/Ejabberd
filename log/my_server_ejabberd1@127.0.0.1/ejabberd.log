@@ -572,3 +572,209 @@ Reason: IP address and port number already used: 0.0.0.0 5222
 2016-04-06 15:18:33.305 [info] <0.457.0>@ejabberd_listener:listen_tcp:213 Reusing listening port for {5280,{0,0,0,0},tcp}
 2016-04-06 15:18:33.305 [info] <0.43.0>@ejabberd_app:start:101 ejabberd 16.02 is started in the node 'my_server_ejabberd1@127.0.0.1'
 2016-04-06 15:18:33.305 [info] <0.7.0> Application ejabberd started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 10:49:08.922 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-04-07 10:49:08.922 [warning] <0.60.0>@lager_console_backend:66 Lager's console backend is incompatible with the 'old' shell, not enabling it
+2016-04-07 10:49:09.241 [info] <0.7.0> Application lager started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 10:49:09.311 [info] <0.7.0> Application crypto started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 10:49:09.341 [info] <0.7.0> Application sasl started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 10:49:09.374 [info] <0.7.0> Application asn1 started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 10:49:09.375 [info] <0.7.0> Application public_key started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 10:49:09.602 [info] <0.7.0> Application ssl started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 10:49:09.699 [info] <0.7.0> Application fast_yaml started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 10:49:09.842 [info] <0.7.0> Application fast_tls started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 10:49:09.945 [info] <0.7.0> Application fast_xml started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 10:49:10.028 [info] <0.7.0> Application stringprep started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 10:49:10.109 [info] <0.7.0> Application ezlib started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 10:49:10.143 [info] <0.7.0> Application cache_tab started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 10:49:10.690 [info] <0.7.0> Application mnesia started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 10:49:11.933 [info] <0.7.0> Application inets started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 10:49:14.474 [notice] <0.60.0>@lager_file_backend:131 Changed loglevel of ../log/my_server_ejabberd1@127.0.0.1/ejabberd.log to info
+2016-04-07 10:49:14.658 [info] <0.43.0>@cyrsasl_digest:start:60 FQDN used to check DIGEST-MD5 SASL authentication: xxw-PC
+2016-04-07 10:49:14.659 [info] <0.43.0>@ejabberd_app:add_windows_nameservers:239 Adding machine's DNS IPs to Erlang system:
+[]
+2016-04-07 10:49:14.801 [info] <0.454.0>@ejabberd_listener:listen_tcp:213 Reusing listening port for {5222,{0,0,0,0},tcp}
+2016-04-07 10:49:14.802 [info] <0.455.0>@ejabberd_listener:listen_tcp:213 Reusing listening port for {5269,{0,0,0,0},tcp}
+2016-04-07 10:49:14.802 [info] <0.457.0>@ejabberd_listener:listen_tcp:213 Reusing listening port for {5280,{0,0,0,0},tcp}
+2016-04-07 10:49:14.802 [info] <0.43.0>@ejabberd_app:start:101 ejabberd 16.02 is started in the node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 10:49:14.802 [info] <0.7.0> Application ejabberd started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 10:49:37.597 [error] <0.459.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-07 11:27:06.634 [error] <0.519.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-07 11:27:21.670 [info] <0.43.0>@ejabberd_app:stop:121 ejabberd 16.02 is stopped in the node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 11:27:23.737 [info] <0.537.0> Application lager started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 11:27:23.750 [info] <0.537.0> Application crypto started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 11:27:23.759 [info] <0.537.0> Application sasl started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 11:27:23.775 [info] <0.537.0> Application asn1 started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 11:27:23.775 [info] <0.537.0> Application public_key started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 11:27:23.787 [info] <0.537.0> Application ssl started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 11:27:23.805 [info] <0.537.0> Application fast_yaml started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 11:27:23.831 [info] <0.537.0> Application fast_tls started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 11:27:23.855 [info] <0.537.0> Application fast_xml started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 11:27:23.864 [info] <0.537.0> Application stringprep started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 11:27:23.885 [info] <0.537.0> Application ezlib started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 11:27:23.905 [info] <0.537.0> Application cache_tab started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 11:27:24.024 [error] <0.595.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-04-07 11:27:24.024 [warning] <0.590.0>@lager_console_backend:66 Lager's console backend is incompatible with the 'old' shell, not enabling it
+2016-04-07 11:27:24.287 [info] <0.537.0> Application mnesia started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 11:27:24.911 [info] <0.537.0> Application inets started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 11:27:25.197 [notice] <0.590.0>@lager_file_backend:131 Changed loglevel of ../log/my_server_ejabberd1@127.0.0.1/ejabberd.log to info
+2016-04-07 11:27:25.335 [info] <0.573.0>@cyrsasl_digest:start:60 FQDN used to check DIGEST-MD5 SASL authentication: xxw-PC
+2016-04-07 11:27:25.336 [info] <0.573.0>@ejabberd_app:add_windows_nameservers:239 Adding machine's DNS IPs to Erlang system:
+[]
+2016-04-07 11:27:25.400 [info] <0.984.0>@ejabberd_listener:listen_tcp:213 Reusing listening port for {5222,{0,0,0,0},tcp}
+2016-04-07 11:27:25.400 [info] <0.985.0>@ejabberd_listener:listen_tcp:213 Reusing listening port for {5269,{0,0,0,0},tcp}
+2016-04-07 11:27:25.400 [info] <0.987.0>@ejabberd_listener:listen_tcp:213 Reusing listening port for {5280,{0,0,0,0},tcp}
+2016-04-07 11:27:25.400 [info] <0.573.0>@ejabberd_app:start:101 ejabberd 16.02 is started in the node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 11:27:25.401 [info] <0.537.0> Application ejabberd started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 11:30:34.191 [error] <0.994.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-07 11:30:43.722 [error] <0.996.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-07 11:31:00.495 [error] <0.998.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-07 14:40:14.504 [info] <0.7.0> Application lager started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:40:14.515 [info] <0.7.0> Application crypto started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:40:14.521 [info] <0.7.0> Application sasl started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:40:14.539 [info] <0.7.0> Application asn1 started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:40:14.539 [info] <0.7.0> Application public_key started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:40:14.548 [info] <0.7.0> Application ssl started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:40:14.566 [info] <0.7.0> Application fast_yaml started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:40:14.590 [info] <0.7.0> Application fast_tls started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:40:14.612 [info] <0.7.0> Application fast_xml started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:40:14.619 [info] <0.7.0> Application stringprep started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:40:14.637 [info] <0.7.0> Application ezlib started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:40:14.654 [info] <0.7.0> Application cache_tab started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:40:14.745 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-04-07 14:40:14.745 [warning] <0.60.0>@lager_console_backend:66 Lager's console backend is incompatible with the 'old' shell, not enabling it
+2016-04-07 14:40:15.050 [info] <0.7.0> Application mnesia started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:40:15.789 [info] <0.7.0> Application inets started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:40:16.102 [notice] <0.60.0>@lager_file_backend:131 Changed loglevel of ../log/my_server_ejabberd1@127.0.0.1/ejabberd.log to info
+2016-04-07 14:40:16.295 [info] <0.43.0>@cyrsasl_digest:start:60 FQDN used to check DIGEST-MD5 SASL authentication: xxw-PC
+2016-04-07 14:40:16.296 [info] <0.43.0>@ejabberd_app:add_windows_nameservers:239 Adding machine's DNS IPs to Erlang system:
+[]
+2016-04-07 14:40:16.370 [info] <0.454.0>@ejabberd_listener:listen_tcp:213 Reusing listening port for {5222,{0,0,0,0},tcp}
+2016-04-07 14:40:16.370 [info] <0.455.0>@ejabberd_listener:listen_tcp:213 Reusing listening port for {5269,{0,0,0,0},tcp}
+2016-04-07 14:40:16.370 [info] <0.457.0>@ejabberd_listener:listen_tcp:213 Reusing listening port for {5280,{0,0,0,0},tcp}
+2016-04-07 14:40:16.370 [info] <0.43.0>@ejabberd_app:start:101 ejabberd 16.02 is started in the node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:40:16.370 [info] <0.7.0> Application ejabberd started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:22.528 [info] <0.7.0> Application lager started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:22.540 [info] <0.7.0> Application crypto started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:22.547 [info] <0.7.0> Application sasl started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:22.565 [info] <0.7.0> Application asn1 started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:22.565 [info] <0.7.0> Application public_key started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:22.575 [info] <0.7.0> Application ssl started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:22.591 [info] <0.7.0> Application fast_yaml started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:22.611 [info] <0.7.0> Application fast_tls started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:22.628 [info] <0.7.0> Application fast_xml started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:22.631 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-04-07 14:44:22.631 [warning] <0.60.0>@lager_console_backend:66 Lager's console backend is incompatible with the 'old' shell, not enabling it
+2016-04-07 14:44:22.715 [info] <0.7.0> Application stringprep started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:22.788 [info] <0.7.0> Application ezlib started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:22.813 [info] <0.7.0> Application cache_tab started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:23.149 [info] <0.7.0> Application mnesia started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:23.861 [info] <0.7.0> Application inets started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:24.167 [notice] <0.60.0>@lager_file_backend:131 Changed loglevel of ../log/my_server_ejabberd1@127.0.0.1/ejabberd.log to info
+2016-04-07 14:44:24.301 [info] <0.43.0>@cyrsasl_digest:start:60 FQDN used to check DIGEST-MD5 SASL authentication: xxw-PC
+2016-04-07 14:44:24.302 [info] <0.43.0>@ejabberd_app:add_windows_nameservers:239 Adding machine's DNS IPs to Erlang system:
+[]
+2016-04-07 14:44:24.368 [info] <0.454.0>@ejabberd_listener:listen_tcp:213 Reusing listening port for {5222,{0,0,0,0},tcp}
+2016-04-07 14:44:24.369 [info] <0.455.0>@ejabberd_listener:listen_tcp:213 Reusing listening port for {5269,{0,0,0,0},tcp}
+2016-04-07 14:44:24.369 [info] <0.457.0>@ejabberd_listener:listen_tcp:213 Reusing listening port for {5280,{0,0,0,0},tcp}
+2016-04-07 14:44:24.369 [info] <0.43.0>@ejabberd_app:start:101 ejabberd 16.02 is started in the node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:24.369 [info] <0.7.0> Application ejabberd started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:27.768 [error] <0.458.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-07 14:44:54.249 [info] <0.7.0> Application lager started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:54.261 [info] <0.7.0> Application crypto started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:54.268 [info] <0.7.0> Application sasl started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:54.286 [info] <0.7.0> Application asn1 started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:54.286 [info] <0.7.0> Application public_key started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:54.295 [info] <0.7.0> Application ssl started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:54.311 [info] <0.7.0> Application fast_yaml started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:54.332 [info] <0.7.0> Application fast_tls started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:54.351 [info] <0.7.0> Application fast_xml started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:54.358 [info] <0.7.0> Application stringprep started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:54.374 [info] <0.7.0> Application ezlib started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:54.390 [info] <0.7.0> Application cache_tab started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:54.564 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-04-07 14:44:54.564 [warning] <0.60.0>@lager_console_backend:66 Lager's console backend is incompatible with the 'old' shell, not enabling it
+2016-04-07 14:44:54.675 [info] <0.7.0> Application mnesia started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:55.374 [info] <0.7.0> Application inets started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:55.667 [notice] <0.60.0>@lager_file_backend:131 Changed loglevel of ../log/my_server_ejabberd1@127.0.0.1/ejabberd.log to info
+2016-04-07 14:44:55.791 [info] <0.43.0>@cyrsasl_digest:start:60 FQDN used to check DIGEST-MD5 SASL authentication: xxw-PC
+2016-04-07 14:44:55.792 [info] <0.43.0>@ejabberd_app:add_windows_nameservers:239 Adding machine's DNS IPs to Erlang system:
+[]
+2016-04-07 14:44:55.876 [info] <0.454.0>@ejabberd_listener:listen_tcp:213 Reusing listening port for {5222,{0,0,0,0},tcp}
+2016-04-07 14:44:55.876 [info] <0.455.0>@ejabberd_listener:listen_tcp:213 Reusing listening port for {5269,{0,0,0,0},tcp}
+2016-04-07 14:44:55.877 [info] <0.457.0>@ejabberd_listener:listen_tcp:213 Reusing listening port for {5280,{0,0,0,0},tcp}
+2016-04-07 14:44:55.877 [info] <0.43.0>@ejabberd_app:start:101 ejabberd 16.02 is started in the node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:44:55.877 [info] <0.7.0> Application ejabberd started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:45:26.084 [error] <0.459.0> ** Connection attempt from disallowed node 'ctl-my_server_ejabberd1@127.0.0.1' ** 
+2016-04-07 14:52:21.843 [info] <0.7.0> Application lager started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:52:21.857 [info] <0.7.0> Application crypto started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:52:21.863 [info] <0.7.0> Application sasl started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:52:21.880 [info] <0.7.0> Application asn1 started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:52:21.880 [info] <0.7.0> Application public_key started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:52:21.891 [info] <0.7.0> Application ssl started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:52:21.908 [info] <0.7.0> Application fast_yaml started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:52:21.930 [info] <0.7.0> Application fast_tls started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:52:21.951 [info] <0.7.0> Application fast_xml started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:52:21.959 [info] <0.7.0> Application stringprep started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:52:21.976 [info] <0.7.0> Application ezlib started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:52:21.993 [info] <0.7.0> Application cache_tab started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:52:22.053 [error] <0.65.0>@lager_handler_watcher:108 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-04-07 14:52:22.053 [warning] <0.60.0>@lager_console_backend:66 Lager's console backend is incompatible with the 'old' shell, not enabling it
+2016-04-07 14:52:22.381 [info] <0.7.0> Application mnesia started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:52:23.248 [info] <0.7.0> Application inets started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:52:23.568 [notice] <0.60.0>@lager_file_backend:131 Changed loglevel of ../log/my_server_ejabberd1@127.0.0.1/ejabberd.log to info
+2016-04-07 14:52:23.795 [info] <0.43.0>@cyrsasl_digest:start:60 FQDN used to check DIGEST-MD5 SASL authentication: xxw-PC
+2016-04-07 14:52:23.796 [info] <0.43.0>@ejabberd_app:add_windows_nameservers:239 Adding machine's DNS IPs to Erlang system:
+[]
+2016-04-07 14:52:23.858 [info] <0.454.0>@ejabberd_listener:listen_tcp:213 Reusing listening port for {5222,{0,0,0,0},tcp}
+2016-04-07 14:52:23.858 [info] <0.455.0>@ejabberd_listener:listen_tcp:213 Reusing listening port for {5269,{0,0,0,0},tcp}
+2016-04-07 14:52:23.858 [info] <0.457.0>@ejabberd_listener:listen_tcp:213 Reusing listening port for {5280,{0,0,0,0},tcp}
+2016-04-07 14:52:23.858 [info] <0.43.0>@ejabberd_app:start:101 ejabberd 16.02 is started in the node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 14:52:23.859 [info] <0.7.0> Application ejabberd started on node 'my_server_ejabberd1@127.0.0.1'
+2016-04-07 15:24:53.329 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10176>) Accepted connection 127.0.0.1:54258 -> 127.0.0.1:5280
+2016-04-07 15:24:53.329 [info] <0.566.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10176>}
+2016-04-07 15:25:17.797 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10177>) Accepted connection 127.0.0.1:54282 -> 127.0.0.1:5280
+2016-04-07 15:25:17.797 [info] <0.567.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10177>}
+2016-04-07 15:25:52.464 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10184>) Accepted connection 127.0.0.1:54314 -> 127.0.0.1:5280
+2016-04-07 15:25:52.467 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10185>) Accepted connection 127.0.0.1:54315 -> 127.0.0.1:5280
+2016-04-07 15:25:52.467 [info] <0.575.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10184>}
+2016-04-07 15:25:52.467 [info] <0.576.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10185>}
+2016-04-07 15:25:53.967 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10186>) Accepted connection 127.0.0.1:54317 -> 127.0.0.1:5280
+2016-04-07 15:25:53.967 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10187>) Accepted connection 127.0.0.1:54318 -> 127.0.0.1:5280
+2016-04-07 15:25:53.969 [info] <0.577.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10186>}
+2016-04-07 15:25:53.969 [info] <0.578.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10187>}
+2016-04-07 15:26:01.755 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10188>) Accepted connection 127.0.0.1:54325 -> 127.0.0.1:5280
+2016-04-07 15:26:01.755 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10189>) Accepted connection 127.0.0.1:54326 -> 127.0.0.1:5280
+2016-04-07 15:26:01.755 [info] <0.579.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10188>}
+2016-04-07 15:26:01.756 [info] <0.580.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10189>}
+2016-04-07 15:26:04.493 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10190>) Accepted connection 127.0.0.1:54328 -> 127.0.0.1:5280
+2016-04-07 15:26:04.494 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10191>) Accepted connection 127.0.0.1:54329 -> 127.0.0.1:5280
+2016-04-07 15:26:04.494 [info] <0.581.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10190>}
+2016-04-07 15:26:04.494 [info] <0.582.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10191>}
+2016-04-07 15:26:08.995 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10192>) Accepted connection 127.0.0.1:54333 -> 127.0.0.1:5280
+2016-04-07 15:26:08.995 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10193>) Accepted connection 127.0.0.1:54334 -> 127.0.0.1:5280
+2016-04-07 15:26:08.996 [info] <0.583.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10192>}
+2016-04-07 15:26:08.996 [info] <0.584.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10193>}
+2016-04-07 15:26:08.996 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10194>) Accepted connection 127.0.0.1:54335 -> 127.0.0.1:5280
+2016-04-07 15:26:08.996 [info] <0.585.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10194>}
+2016-04-07 15:26:14.709 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10195>) Accepted connection 127.0.0.1:54340 -> 127.0.0.1:5280
+2016-04-07 15:26:14.710 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10196>) Accepted connection 127.0.0.1:54341 -> 127.0.0.1:5280
+2016-04-07 15:26:14.710 [info] <0.586.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10195>}
+2016-04-07 15:26:14.710 [info] <0.587.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10196>}
+2016-04-07 15:26:16.115 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10197>) Accepted connection 127.0.0.1:54343 -> 127.0.0.1:5280
+2016-04-07 15:26:16.115 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10198>) Accepted connection 127.0.0.1:54344 -> 127.0.0.1:5280
+2016-04-07 15:26:16.115 [info] <0.588.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10197>}
+2016-04-07 15:26:16.115 [info] <0.589.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10198>}
+2016-04-07 15:26:26.024 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10199>) Accepted connection 127.0.0.1:54352 -> 127.0.0.1:5280
+2016-04-07 15:26:26.024 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10200>) Accepted connection 127.0.0.1:54353 -> 127.0.0.1:5280
+2016-04-07 15:26:26.026 [info] <0.591.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10199>}
+2016-04-07 15:26:26.026 [info] <0.592.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10200>}
+2016-04-07 15:27:38.018 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10677>) Accepted connection 127.0.0.1:54398 -> 127.0.0.1:5280
+2016-04-07 15:27:38.018 [info] <0.457.0>@ejabberd_listener:accept:375 (#Port<0.10678>) Accepted connection 127.0.0.1:54399 -> 127.0.0.1:5280
+2016-04-07 15:27:38.018 [info] <0.695.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10677>}
+2016-04-07 15:27:38.018 [info] <0.696.0>@ejabberd_http:init:164 started: {gen_tcp,#Port<0.10678>}
+2016-04-07 15:29:18.259 [info] <0.454.0>@ejabberd_listener:accept:375 (#Port<0.10685>) Accepted connection 192.168.1.43:54467 -> 192.168.1.43:5222
+2016-04-07 15:29:18.905 [info] <0.706.0>@ejabberd_c2s:wait_for_sasl_response:941 ({socket_state,fast_tls,{tlssock,#Port<0.10685>,#Port<0.10712>},<0.705.0>}) Accepted authentication for admin by undefined from 192.168.1.43
+2016-04-07 15:29:19.183 [info] <0.706.0>@ejabberd_c2s:open_session:1161 ({socket_state,fast_tls,{tlssock,#Port<0.10685>,#Port<0.10712>},<0.705.0>}) Opened session for admin@xxw-pc/æ½è¿ªå®
+2016-04-07 15:29:26.224 [info] <0.454.0>@ejabberd_listener:accept:375 (#Port<0.10713>) Accepted connection 192.168.1.43:54475 -> 192.168.1.43:5222
+2016-04-07 15:29:26.375 [info] <0.709.0>@ejabberd_c2s:wait_for_sasl_response:941 ({socket_state,fast_tls,{tlssock,#Port<0.10713>,#Port<0.10714>},<0.708.0>}) Accepted authentication for test by undefined from 192.168.1.43
+2016-04-07 15:29:26.647 [info] <0.709.0>@ejabberd_c2s:open_session:1161 ({socket_state,fast_tls,{tlssock,#Port<0.10713>,#Port<0.10714>},<0.708.0>}) Opened session for test@xxw-pc/æ½è¿ªå®
